@@ -1,41 +1,211 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Important Notes For Students</title>
-<link rel="stylesheet" href="style.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#eef3f8;
+}
+
+header{
+background:#0066cc;
+color:white;
+padding:25px;
+text-align:center;
+}
+
+header h1{
+font-size:35px;
+}
+
+header p{
+margin-top:10px;
+}
+
+.search{
+text-align:center;
+margin:25px;
+}
+
+.search input{
+width:90%;
+max-width:500px;
+padding:15px;
+border-radius:30px;
+border:2px solid #0066cc;
+font-size:18px;
+}
+
+.container{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+padding:30px;
+}
+
+.card{
+background:white;
+padding:25px;
+border-radius:15px;
+box-shadow:0 5px 15px rgba(0,0,0,.15);
+text-align:center;
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+}
+
+.card h2{
+color:#0066cc;
+margin-bottom:15px;
+}
+
+button{
+padding:12px 25px;
+background:#0066cc;
+color:white;
+border:none;
+border-radius:8px;
+font-size:17px;
+cursor:pointer;
+}
+
+button:hover{
+background:#004999;
+}
+
+.featured{
+background:white;
+margin:30px;
+padding:25px;
+border-radius:15px;
+box-shadow:0 5px 15px rgba(0,0,0,.15);
+}
+
+.featured h2{
+color:#0066cc;
+margin-bottom:15px;
+}
+
+.featured ul{
+line-height:2;
+font-size:18px;
+}
+
+footer{
+background:#222;
+color:white;
+padding:20px;
+text-align:center;
+margin-top:40px;
+}
+
+a{
+text-decoration:none;
+}
+
+</style>
+
 </head>
 
 <body>
 
 <header>
-<h1>📚 IMPORTANT NOTES FOR STUDENTS</h1>
-<p>Select Your Class</p>
+
+<h1>📚 Important Notes For Students</h1>
+
+<p>Free Notes | Previous Papers | Important Questions</p>
+
 </header>
+
+<div class="search">
+
+<input type="text" placeholder="🔍 Search Notes...">
+
+</div>
 
 <div class="container">
 
 <div class="card">
+
 <h2>📘 Class 10</h2>
+
+<p>Mathematics, Science, English</p>
+
 <a href="class10.html">
-<button>Open Class 10</button>
+
+<button>Open</button>
+
 </a>
+
 </div>
 
 <div class="card">
+
 <h2>📙 Class 11</h2>
+
+<p>Physics, Chemistry, Maths, Biology</p>
+
 <a href="class11.html">
-<button>Open Class 11</button>
+
+<button>Open</button>
+
 </a>
+
 </div>
 
 <div class="card">
+
 <h2>📕 Class 12</h2>
+
+<p>Physics, Chemistry, Maths, Biology</p>
+
 <a href="class12.html">
-<button>Open Class 12</button>
+
+<button>Open</button>
+
 </a>
+
 </div>
 
 </div>
+
+<div class="featured">
+
+<h2>⭐ Featured Notes</h2>
+
+<ul>
+
+<li>📘 Class 10 Real Numbers</li>
+
+<li>📘 Class 10 Polynomials</li>
+
+<li>🧪 Science Important Questions</li>
+
+<li>📄 Previous Year Question Papers</li>
+
+</ul>
+
+</div>
+
+<footer>
+
+© 2026 Important Notes For Students
+
+</footer>
 
 </body>
+
 </html>

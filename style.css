@@ -219,3 +219,33 @@ padding:20px;
 }
 
 }
+.stats{
+display:flex;
+justify-content:center;
+gap:30px;
+flex-wrap:wrap;
+margin-top:40px;
+}
+
+.stat{
+background:white;
+padding:20px;
+border-radius:15px;
+width:180px;
+box-shadow:0 5px 15px rgba(0,0,0,.15);
+text-align:center;
+transition:.3s;
+}
+
+.stat:hover{
+transform:translateY(-8px);
+}
+
+.stat h2{
+color:#007bff;
+font-size:32px;
+}
+
+.stat p{
+margin-top:10px;
+}

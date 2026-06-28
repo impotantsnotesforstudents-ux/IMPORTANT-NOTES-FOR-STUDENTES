@@ -1,7 +1,26 @@
-const btn = document.getElementById("darkMode");
+const darkBtn = document.getElementById("darkMode");
 
-btn.onclick = function () {
-    document.body.style.background = "white";
-    document.body.style.color = "black";
-    alert("Dark mode button works!");
+darkBtn.addEventListener("click", () => {
+
+    document.body.classList.toggle("light-mode");
+
+    if(document.body.classList.contains("light-mode")){
+        darkBtn.innerHTML = "🌙";
+        localStorage.setItem("theme","light");
+    }else{
+        darkBtn.innerHTML = "☀️";
+        localStorage.setItem("theme","dark");
+    }
+
+});
+
+window.onload = () => {
+
+    if(localStorage.getItem("theme")=="light"){
+        document.body.classList.add("light-mode");
+        darkBtn.innerHTML="🌙";
+    }else{
+        darkBtn.innerHTML="☀️";
+    }
+
 };

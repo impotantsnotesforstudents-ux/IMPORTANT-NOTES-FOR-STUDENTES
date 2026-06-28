@@ -188,27 +188,18 @@ nav a:hover{
 .search-box{
     width:100%;
     max-width:700px;
-    margin:auto;
+    margin:40px auto;
     display:flex;
-    background:#1A1D24;
-    border:1px solid #2E323B;
-    border-radius:60px;
-    overflow:hidden;
 }
 
 .search-box input{
     flex:1;
-    padding:18px 25px;
-    background:transparent;
-    border:none;
-    color:white;
-    font-size:17px;
-    outline:none;
+    height:60px;
+    padding:0 20px;
+    font-size:18px;
 }
 
 .search-box button{
     width:70px;
-    background:#FFFFFF;
-    color:#111827;
-    font-size:18px;
+    height:60px;
 }

@@ -1,7 +1,6 @@
-/* ====================================
+/* =====================================
    ATR IMPORTANT NOTES V2
-   GLOBAL STYLES
-==================================== */
+===================================== */
 
 *{
     margin:0;
@@ -17,43 +16,25 @@ html{
 body{
     background:#0F1117;
     color:#FFFFFF;
-    line-height:1.6;
     overflow-x:hidden;
 }
 
 a{
     text-decoration:none;
-    color:inherit;
 }
 
 img{
-    max-width:100%;
     display:block;
+    max-width:100%;
 }
 
-button{
-    cursor:pointer;
-    border:none;
-    transition:.3s;
-}
-
-section{
-    padding:80px 8%;
-}
-
-.container{
-    width:100%;
-    max-width:1200px;
-    margin:auto;
-}
-/* ====================================
+/* =====================================
    HEADER
-==================================== */
+===================================== */
 
 header{
     position:fixed;
     top:0;
-    left:0;
     width:100%;
     height:80px;
     background:#111827;
@@ -62,7 +43,7 @@ header{
     align-items:center;
     padding:0 8%;
     border-bottom:1px solid #2E323B;
-    z-index:1000;
+    z-index:999;
 }
 
 .logo{
@@ -78,202 +59,72 @@ header{
 }
 
 .logo h2{
-    color:#fff;
     font-size:24px;
-    font-weight:700;
 }
 
-.logo span{
+.logo p{
     color:#9CA3AF;
     font-size:14px;
 }
 
-/* ====================================
-   NAVIGATION
-==================================== */
-
 nav{
     display:flex;
-    align-items:center;
     gap:30px;
 }
 
 nav a{
-    color:#D1D5DB;
-    font-size:16px;
-    font-weight:600;
+    color:white;
     transition:.3s;
 }
 
 nav a:hover{
-    color:#FFFFFF;
+    color:#D1D5DB;
 }
 
 #darkMode{
     width:45px;
     height:45px;
-    background:#1F2937;
-    color:white;
+    border:none;
     border-radius:50%;
-    font-size:18px;
-}
-
-#darkMode:hover{
     background:white;
     color:black;
+    cursor:pointer;
 }
-/* ====================================
-   HERO SECTION
-==================================== */
+
+/* =====================================
+   HERO
+===================================== */
 
 .hero{
     min-height:100vh;
-    background:#0F1117;
     display:flex;
     justify-content:center;
     align-items:center;
     text-align:center;
-    padding:120px 8% 80px;
+    padding:140px 8% 80px;
 }
 
 .hero-content{
     max-width:900px;
 }
 
-.hero h1{
-    font-size:56px;
-    line-height:1.2;
-    margin-bottom:20px;
-}
-
-.hero p{
-    font-size:22px;
-    color:#9CA3AF;
-    margin-bottom:40px;
-}
-
-.hero-buttons{
-    display:flex;
-    justify-content:center;
-    gap:20px;
-    flex-wrap:wrap;
-    margin-bottom:50px;
-}
-
-.btn{
+.tag{
     display:inline-block;
-    padding:15px 35px;
-    background:#FFFFFF;
-    color:#111827;
-    border-radius:50px;
-    font-weight:700;
-    transition:.3s;
-}
-
-.btn:hover{
-    transform:translateY(-4px);
-    background:#E5E7EB;
-}
-
-.btn.white{
-    background:#1F2937;
-    color:#FFFFFF;
-    border:1px solid #2E323B;
-}
-
-.btn.white:hover{
-    background:#2E323B;
-}
-
-.search-box{
-    width:100%;
-    max-width:700px;
-    margin:40px auto;
-    display:flex;
-}
-
-.search-box input{
-    flex:1;
-    height:60px;
-    padding:0 20px;
-    font-size:18px;
-}
-
-.search-box button{
-    width:70px;
-    height:60px;
-}
-/* ===========================
-   CLASS CARDS
-=========================== */
-
-.classes{
-    padding:100px 8%;
-    background:#0F1117;
-}
-
-.section-title{
-    text-align:center;
-    font-size:42px;
-    color:#fff;
-    margin-bottom:15px;
-}
-
-.section-subtitle{
-    text-align:center;
-    color:#9CA3AF;
-    margin-bottom:60px;
-    font-size:18px;
-}
-
-.class-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:30px;
-}
-
-.class-card{
+    padding:10px 20px;
     background:#1A1D24;
+    border-radius:50px;
     border:1px solid #2E323B;
-    border-radius:20px;
-    padding:35px;
-    text-align:center;
-    transition:0.3s;
+    margin-bottom:30px;
 }
 
-.class-card:hover{
-    transform:translateY(-10px);
-    border-color:#FFFFFF;
-    box-shadow:0 10px 30px rgba(255,255,255,.08);
-}
-
-.class-icon{
-    font-size:60px;
+.hero h1{
+    font-size:64px;
+    line-height:1.1;
     margin-bottom:20px;
 }
 
-.class-card h3{
-    color:#fff;
-    margin-bottom:15px;
-    font-size:28px;
-}
-
-.class-card p{
+.hero-text{
     color:#9CA3AF;
-    margin-bottom:30px;
-    line-height:1.7;
-}
-
-.class-btn{
-    display:inline-block;
-    background:#FFFFFF;
-    color:#111827;
-    padding:14px 30px;
-    border-radius:40px;
-    font-weight:bold;
-    transition:0.3s;
-}
-
-.class-btn:hover{
-    background:#D1D5DB;
+    font-size:20px;
+    margin-bottom:40px;
 }

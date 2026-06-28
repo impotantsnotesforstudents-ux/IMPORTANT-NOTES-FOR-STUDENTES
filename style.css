@@ -249,3 +249,159 @@ font-size:32px;
 .stat p{
 margin-top:10px;
 }
+/* ===========================
+   HERO SECTION
+=========================== */
+
+.hero{
+    min-height:90vh;
+    background:#0F1117;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:100px 20px;
+    color:#fff;
+}
+
+.hero-container{
+    width:100%;
+    max-width:1200px;
+    text-align:center;
+}
+
+.hero-badge{
+    display:inline-block;
+    background:#1A1D24;
+    color:#fff;
+    padding:10px 22px;
+    border-radius:50px;
+    border:1px solid #2E323B;
+    margin-bottom:30px;
+    font-size:15px;
+}
+
+.hero h1{
+    font-size:72px;
+    font-weight:700;
+    line-height:1.1;
+    margin-bottom:20px;
+}
+
+.hero p{
+    color:#A1A1AA;
+    font-size:22px;
+    max-width:700px;
+    margin:auto;
+    margin-bottom:45px;
+}
+
+.hero-search{
+    display:flex;
+    justify-content:center;
+    max-width:700px;
+    margin:0 auto 40px;
+    background:#1A1D24;
+    border:1px solid #2E323B;
+    border-radius:60px;
+    overflow:hidden;
+}
+
+.hero-search input{
+    flex:1;
+    background:none;
+    border:none;
+    color:#fff;
+    padding:18px 25px;
+    font-size:18px;
+    outline:none;
+}
+
+.hero-search button{
+    width:70px;
+    border:none;
+    background:#fff;
+    color:#111;
+    cursor:pointer;
+    font-size:20px;
+}
+
+.hero-buttons{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    margin-bottom:60px;
+    flex-wrap:wrap;
+}
+
+.primary-btn,
+.secondary-btn{
+    padding:16px 35px;
+    border-radius:50px;
+    text-decoration:none;
+    font-size:18px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.primary-btn{
+    background:#fff;
+    color:#111;
+}
+
+.secondary-btn{
+    background:#1A1D24;
+    color:#fff;
+    border:1px solid #2E323B;
+}
+
+.primary-btn:hover,
+.secondary-btn:hover{
+    transform:translateY(-5px);
+}
+
+.hero-stats{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    flex-wrap:wrap;
+}
+
+.stat-box{
+    width:220px;
+    background:#1A1D24;
+    padding:30px;
+    border-radius:20px;
+    border:1px solid #2E323B;
+}
+
+.stat-box h2{
+    font-size:36px;
+    color:#fff;
+    margin-bottom:10px;
+}
+
+.stat-box span{
+    color:#A1A1AA;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+    font-size:42px;
+}
+
+.hero p{
+    font-size:18px;
+}
+
+.hero-search{
+    flex-direction:column;
+    border-radius:20px;
+}
+
+.hero-search button{
+    width:100%;
+    height:60px;
+}
+
+}

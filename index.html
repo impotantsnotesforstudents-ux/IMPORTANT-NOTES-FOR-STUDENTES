@@ -1,148 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Important Notes For Students</title>
 
-<style>
+<title>ATR Important Notes</title>
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,sans-serif;
-}
+<link rel="stylesheet" href="style.css">
 
-body{
-background:#eef3f8;
-}
-
-header{
-background:#0066cc;
-color:white;
-padding:25px;
-text-align:center;
-}
-
-header h1{
-font-size:35px;
-}
-
-header p{
-margin-top:10px;
-}
-
-.search{
-text-align:center;
-margin:25px;
-}
-
-.search input{
-width:90%;
-max-width:500px;
-padding:15px;
-border-radius:30px;
-border:2px solid #0066cc;
-font-size:18px;
-}
-
-.container{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:25px;
-padding:30px;
-}
-
-.card{
-background:white;
-padding:25px;
-border-radius:15px;
-box-shadow:0 5px 15px rgba(0,0,0,.15);
-text-align:center;
-transition:.3s;
-}
-
-.card:hover{
-transform:translateY(-8px);
-}
-
-.card h2{
-color:#0066cc;
-margin-bottom:15px;
-}
-
-button{
-padding:12px 25px;
-background:#0066cc;
-color:white;
-border:none;
-border-radius:8px;
-font-size:17px;
-cursor:pointer;
-}
-
-button:hover{
-background:#004999;
-}
-
-.featured{
-background:white;
-margin:30px;
-padding:25px;
-border-radius:15px;
-box-shadow:0 5px 15px rgba(0,0,0,.15);
-}
-
-.featured h2{
-color:#0066cc;
-margin-bottom:15px;
-}
-
-.featured ul{
-line-height:2;
-font-size:18px;
-}
-
-footer{
-background:#222;
-color:white;
-padding:20px;
-text-align:center;
-margin-top:40px;
-}
-
-a{
-text-decoration:none;
-}
-
-</style>
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
 </head>
 
 <body>
 
+<!-- HEADER -->
+
 <header>
 
-<h1>📚 Important Notes For Students</h1>
+<div class="logo">
 
-<p>Free Notes | Previous Papers | Important Questions</p>
+<img src="images/LOGO.jpeg" alt="ATR Logo">
 
-</header>
-
-<div class="search">
-
-<input type="text" placeholder="🔍 Search Notes...">
+<h2>ATR Important Notes</h2>
 
 </div>
 
-<div class="container">
+<nav>
+
+<a href="index.html">Home</a>
+
+<a href="class10.html">Class 10</a>
+
+<a href="class11.html">Class 11</a>
+
+<a href="class12.html">Class 12</a>
+
+<a href="#">Contact</a>
+
+</nav>
+
+<button id="darkMode">
+
+<i class="fas fa-moon"></i>
+
+</button>
+
+</header>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<h1>Learn Smart 📚</h1>
+
+<p>Free Notes | Previous Papers | Important Questions</p>
+
+<div class="search">
+
+<input
+type="text"
+id="search"
+placeholder="Search Notes...">
+
+<button>
+
+<i class="fas fa-search"></i>
+
+</button>
+
+</div>
+
+</section>
+
+<!-- CLASS CARDS -->
+
+<section class="cards">
 
 <div class="card">
 
 <h2>📘 Class 10</h2>
 
-<p>Mathematics, Science, English</p>
+<p>Mathematics, Science & English</p>
 
 <a href="class10.html">
 
@@ -156,7 +98,7 @@ text-decoration:none;
 
 <h2>📙 Class 11</h2>
 
-<p>Physics, Chemistry, Maths, Biology</p>
+<p>Physics, Chemistry, Maths</p>
 
 <a href="class11.html">
 
@@ -170,7 +112,7 @@ text-decoration:none;
 
 <h2>📕 Class 12</h2>
 
-<p>Physics, Chemistry, Maths, Biology</p>
+<p>Physics, Chemistry, Maths</p>
 
 <a href="class12.html">
 
@@ -180,31 +122,63 @@ text-decoration:none;
 
 </div>
 
-</div>
+</section>
 
-<div class="featured">
+<!-- FEATURED -->
+
+<section class="featured">
 
 <h2>⭐ Featured Notes</h2>
 
-<ul>
+<div class="feature-grid">
 
-<li>📘 Class 10 Real Numbers</li>
+<div>
 
-<li>📘 Class 10 Polynomials</li>
-
-<li>🧪 Science Important Questions</li>
-
-<li>📄 Previous Year Question Papers</li>
-
-</ul>
+📘 Real Numbers
 
 </div>
 
+<div>
+
+📘 Polynomials
+
+</div>
+
+<div>
+
+📘 Quadratic Equations
+
+</div>
+
+<div>
+
+📘 Trigonometry
+
+</div>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
 <footer>
 
-© 2026 Important Notes For Students
+<p>
+
+© 2026 ATR Important Notes
+
+</p>
+
+<p>
+
+Made for Students ❤️
+
+</p>
 
 </footer>
+
+<script src="script.js"></script>
 
 </body>
 

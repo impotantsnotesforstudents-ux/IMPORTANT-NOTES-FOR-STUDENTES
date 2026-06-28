@@ -405,3 +405,39 @@ margin-top:10px;
 }
 
 }
+/* ===== HEADER ===== */
+
+header{
+    position:sticky;
+    top:0;
+    width:100%;
+    background:#111827;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 8%;
+    z-index:1000;
+    border-bottom:1px solid #2E323B;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.logo img{
+    width:55px;
+    height:55px;
+    border-radius:50%;
+}
+
+.logo h2{
+    color:#fff;
+    font-size:22px;
+}
+
+.logo span{
+    color:#9CA3AF;
+    font-size:14px;
+}

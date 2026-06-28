@@ -24,3 +24,18 @@ window.onload = () => {
     }
 
 };
+
+// Dark mode code
+...
+window.onload = () => {
+
+    if(localStorage.getItem("theme")=="light"){
+        document.body.classList.add("light-mode");
+        darkBtn.innerHTML="🌙";
+    }else{
+        darkBtn.innerHTML="☀️";
+    }
+
+};
+
+// ⬇️ PASTE THE SEARCH CODE HERE

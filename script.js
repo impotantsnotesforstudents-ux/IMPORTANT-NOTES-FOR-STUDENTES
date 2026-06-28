@@ -24,8 +24,6 @@ window.onload = () => {
     }
 
 };
-
-// Dark mode code
 ...
 window.onload = () => {
 

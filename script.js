@@ -1,48 +1,52 @@
-// ===================================
-// ATR IMPORTANT NOTES
+// ===============================
+// ATR IMPORTANT NOTES V2
 // script.js
-// ===================================
+// ===============================
 
 // 🌙 Dark Mode
 
 const darkBtn = document.getElementById("darkMode");
 
-function updateTheme() {
-    if (document.body.classList.contains("dark")) {
+if (darkBtn) {
+
+    if (localStorage.getItem("theme") === "dark") {
+        document.body.classList.add("dark");
         darkBtn.innerHTML = '<i class="fas fa-sun"></i>';
-        localStorage.setItem("theme", "dark");
-    } else {
-        darkBtn.innerHTML = '<i class="fas fa-moon"></i>';
-        localStorage.setItem("theme", "light");
     }
+
+    darkBtn.addEventListener("click", () => {
+
+        document.body.classList.toggle("dark");
+
+        if (document.body.classList.contains("dark")) {
+
+            localStorage.setItem("theme", "dark");
+            darkBtn.innerHTML = '<i class="fas fa-sun"></i>';
+
+        } else {
+
+            localStorage.setItem("theme", "light");
+            darkBtn.innerHTML = '<i class="fas fa-moon"></i>';
+
+        }
+
+    });
+
 }
-
-if (localStorage.getItem("theme") === "dark") {
-    document.body.classList.add("dark");
-}
-
-updateTheme();
-
-darkBtn.addEventListener("click", () => {
-    document.body.classList.toggle("dark");
-    updateTheme();
-});
-
 
 // 🔍 Search
 
 const search = document.getElementById("search");
 
 if (search) {
+
     search.addEventListener("keyup", function () {
 
-        let value = this.value.toLowerCase();
+        const value = this.value.toLowerCase();
 
-        let cards = document.querySelectorAll(".card");
+        document.querySelectorAll(".class-card").forEach(card => {
 
-        cards.forEach(card => {
-
-            let text = card.innerText.toLowerCase();
+            const text = card.innerText.toLowerCase();
 
             if (text.includes(value)) {
                 card.style.display = "";
@@ -53,45 +57,44 @@ if (search) {
         });
 
     });
+
 }
 
+// ⬆ Scroll To Top
 
-// ⬆ Scroll To Top Button
+const topBtn = document.createElement("button");
 
-const topButton = document.createElement("button");
+topBtn.innerHTML = "⬆";
 
-topButton.innerHTML = "⬆";
+topBtn.id = "topBtn";
 
-topButton.id = "topBtn";
+document.body.appendChild(topBtn);
 
-document.body.appendChild(topButton);
-
-topButton.style.position = "fixed";
-topButton.style.bottom = "20px";
-topButton.style.right = "20px";
-topButton.style.width = "50px";
-topButton.style.height = "50px";
-topButton.style.borderRadius = "50%";
-topButton.style.border = "none";
-topButton.style.background = "#0066cc";
-topButton.style.color = "white";
-topButton.style.cursor = "pointer";
-topButton.style.display = "none";
-topButton.style.fontSize = "20px";
-topButton.style.boxShadow = "0 5px 15px rgba(0,0,0,.3)";
-topButton.style.transition = ".3s";
+topBtn.style.position = "fixed";
+topBtn.style.bottom = "25px";
+topBtn.style.right = "25px";
+topBtn.style.width = "50px";
+topBtn.style.height = "50px";
+topBtn.style.border = "none";
+topBtn.style.borderRadius = "50%";
+topBtn.style.background = "#FFFFFF";
+topBtn.style.color = "#111827";
+topBtn.style.fontSize = "20px";
+topBtn.style.cursor = "pointer";
+topBtn.style.display = "none";
+topBtn.style.boxShadow = "0 10px 25px rgba(0,0,0,.3)";
 
 window.addEventListener("scroll", () => {
 
     if (window.scrollY > 300) {
-        topButton.style.display = "block";
+        topBtn.style.display = "block";
     } else {
-        topButton.style.display = "none";
+        topBtn.style.display = "none";
     }
 
 });
 
-topButton.addEventListener("click", () => {
+topBtn.addEventListener("click", () => {
 
     window.scrollTo({
         top: 0,

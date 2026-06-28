@@ -454,3 +454,54 @@ nav{
 }
 
 }
+/* ===== LIGHT MODE ===== */
+
+.light-mode{
+    background:#ffffff;
+    color:#111827;
+}
+
+.light-mode header{
+    background:#ffffff;
+    border-bottom:1px solid #ddd;
+}
+
+.light-mode nav a{
+    color:#111827;
+}
+
+.light-mode .hero{
+    background:#ffffff;
+}
+
+.light-mode .hero h1,
+.light-mode h2,
+.light-mode h3{
+    color:#111827;
+}
+
+.light-mode .hero-text,
+.light-mode p{
+    color:#555;
+}
+
+.light-mode .tag,
+.light-mode .search-box,
+.light-mode .class-card,
+.light-mode .stat-card,
+.light-mode .feature-card{
+    background:#f3f4f6;
+    color:#111827;
+    border:1px solid #ddd;
+}
+
+.light-mode .btn{
+    background:#111827;
+    color:white;
+}
+
+.light-mode .btn.secondary{
+    background:white;
+    color:#111827;
+    border:1px solid #111827;
+}

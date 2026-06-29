@@ -505,3 +505,60 @@ nav{
     color:#111827;
     border:1px solid #111827;
 }
+/* ===== LIGHT MODE FIX ===== */
+
+.light-mode{
+    background:#ffffff;
+    color:#111827;
+}
+
+.light-mode h1,
+.light-mode h2,
+.light-mode h3,
+.light-mode h4,
+.light-mode h5,
+.light-mode h6{
+    color:#111827 !important;
+}
+
+.light-mode p,
+.light-mode span,
+.light-mode li{
+    color:#4B5563 !important;
+}
+
+.light-mode a{
+    color:#111827;
+}
+
+.light-mode .hero,
+.light-mode .classes,
+.light-mode .featured,
+.light-mode .premium{
+    background:#ffffff;
+}
+
+.light-mode .class-card,
+.light-mode .stat-card,
+.light-mode .feature-card,
+.light-mode .search-box,
+.light-mode .tag{
+    background:#f3f4f6;
+    color:#111827;
+    border:1px solid #d1d5db;
+}
+
+.light-mode .class-card p,
+.light-mode .stat-card p,
+.light-mode .feature-card p{
+    color:#4B5563;
+}
+
+.light-mode input{
+    color:#111827;
+    background:#ffffff;
+}
+
+.light-mode input::placeholder{
+    color:#6B7280;
+}

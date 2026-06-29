@@ -578,3 +578,58 @@ nav{
     background:#111827;
     color:#ffffff;
 }
+/* ===== MOBILE RESPONSIVE ===== */
+
+@media (max-width:768px){
+
+header{
+    flex-direction:column;
+    padding:15px;
+}
+
+nav{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:15px;
+    margin-top:15px;
+}
+
+.hero-content{
+    text-align:center;
+}
+
+.hero h1{
+    font-size:42px;
+}
+
+.search-box{
+    width:100%;
+}
+
+.search-box input{
+    width:100%;
+}
+
+.hero-buttons{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.stats{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:20px;
+    margin-top:40px;
+}
+
+.class-grid{
+    grid-template-columns:1fr;
+}
+
+.featured-grid{
+    grid-template-columns:1fr;
+}
+
+}

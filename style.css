@@ -754,3 +754,44 @@ nav{
 }
 
 }
+/* ===== MOBILE MENU ===== */
+
+.menu-toggle{
+
+    display:none;
+    background:none;
+    border:none;
+    color:white;
+    font-size:30px;
+    cursor:pointer;
+
+}
+
+@media(max-width:768px){
+
+    .menu-toggle{
+        display:block;
+    }
+
+    #navbar{
+
+        display:none;
+        flex-direction:column;
+        position:absolute;
+        top:80px;
+        right:20px;
+        width:220px;
+        background:#111827;
+        padding:20px;
+        border-radius:15px;
+        gap:18px;
+
+    }
+
+    #navbar.show{
+
+        display:flex;
+
+    }
+
+}

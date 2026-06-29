@@ -562,3 +562,19 @@ nav{
 .light-mode input::placeholder{
     color:#6B7280;
 }
+/* ===== SEARCH INPUT LIGHT MODE ===== */
+
+.light-mode #search{
+    background:#ffffff;
+    color:#111827;
+    border:2px solid #d1d5db;
+}
+
+.light-mode #search::placeholder{
+    color:#6b7280;
+}
+
+.light-mode #searchBtn{
+    background:#111827;
+    color:#ffffff;
+}

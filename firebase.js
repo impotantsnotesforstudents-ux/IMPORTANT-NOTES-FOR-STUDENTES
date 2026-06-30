@@ -1,3 +1,6 @@
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
+import { getAuth } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
+
 const firebaseConfig = {
   apiKey: "AIzaSyD1oZLve-1dvpCG0D3abdxmA9gkFD0j8xE",
   authDomain: "atr-important-notes.firebaseapp.com",
@@ -6,3 +9,8 @@ const firebaseConfig = {
   messagingSenderId: "734933089010",
   appId: "1:734933089010:web:ecdec7b622f4ea38cdae6b"
 };
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+
+export { auth };

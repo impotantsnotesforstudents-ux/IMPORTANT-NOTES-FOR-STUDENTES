@@ -708,3 +708,147 @@ header .container{
 }
 
 }
+/* ================= AUTH PAGES ================= */
+
+.auth-container{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:linear-gradient(135deg,#0F172A,#1E3A8A);
+
+    padding:20px;
+
+}
+
+.auth-box{
+
+    width:100%;
+    max-width:430px;
+
+    background:#1E293B;
+
+    padding:40px;
+
+    border-radius:25px;
+
+    text-align:center;
+
+    box-shadow:0 20px 60px rgba(0,0,0,.35);
+
+}
+
+.auth-logo{
+
+    width:90px;
+
+    margin:0 auto 20px;
+
+}
+
+.auth-box h2{
+
+    font-size:32px;
+
+    margin-bottom:10px;
+
+}
+
+.auth-box p{
+
+    color:#94A3B8;
+
+    margin-bottom:30px;
+
+}
+
+.input-box{
+
+    margin-bottom:18px;
+
+}
+
+.input-box input{
+
+    width:100%;
+
+    padding:16px 20px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#334155;
+
+    color:white;
+
+    font-size:16px;
+
+    outline:none;
+
+}
+
+.input-box input::placeholder{
+
+    color:#CBD5E1;
+
+}
+
+.auth-box .btn{
+
+    width:100%;
+
+    margin-top:10px;
+
+}
+
+.switch{
+
+    margin-top:20px;
+
+}
+
+.switch a{
+
+    color:#3B82F6;
+
+    font-weight:600;
+
+}
+
+.light-mode .auth-container{
+
+    background:#F8FAFC;
+
+}
+
+.light-mode .auth-box{
+
+    background:#FFFFFF;
+
+}
+
+.light-mode .auth-box h2{
+
+    color:#111827;
+
+}
+
+.light-mode .auth-box p{
+
+    color:#4B5563;
+
+}
+
+.light-mode .input-box input{
+
+    background:#E5E7EB;
+
+    color:#111827;
+
+}

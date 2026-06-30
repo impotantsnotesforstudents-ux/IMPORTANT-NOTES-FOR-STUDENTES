@@ -1,18 +1,66 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Login - ATR Important Notes</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Login | ATR Important Notes</title>
+
+<link rel="stylesheet" href="../style.css">
 </head>
+
 <body>
 
-<h1>ATR Important Notes</h1>
+<div class="auth-container">
 
-<h2>Login</h2>
+<div class="auth-box">
 
-<p>Login page is coming soon.</p>
+<img src="../images/LOGO.jpeg" class="auth-logo">
 
-<a href="../index.html">⬅ Back to Home</a>
+<h2>Welcome Back</h2>
+
+<p>Login to your account</p>
+
+<form id="loginForm">
+
+<input
+type="email"
+id="email"
+placeholder="Email Address"
+required>
+
+<input
+type="password"
+id="password"
+placeholder="Password"
+required>
+
+<button type="submit" class="btn">
+
+Login
+
+</button>
+
+</form>
+
+<p>
+
+Don't have an account?
+
+<a href="signup.html">
+
+Create Account
+
+</a>
+
+</p>
+
+</div>
+
+</div>
+
+<script type="module" src="../firebase.js"></script>
+<script type="module" src="../login.js"></script>
 
 </body>
 </html>
-<script type="module" src="../firebase.js"></script>

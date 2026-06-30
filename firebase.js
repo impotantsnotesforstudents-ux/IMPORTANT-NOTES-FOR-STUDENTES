@@ -1,17 +1,8 @@
-// Import Firebase
-import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
-
-// Your Firebase configuration
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
+  apiKey: "AIzaSyD1oZLve-1dvpCG0D3abdxmA9gkFD0j8xE",
   authDomain: "atr-important-notes.firebaseapp.com",
   projectId: "atr-important-notes",
   storageBucket: "atr-important-notes.firebasestorage.app",
   messagingSenderId: "734933089010",
-  appId: "YOUR_APP_ID"
+  appId: "1:734933089010:web:ecdec7b622f4ea38cdae6b"
 };
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-
-console.log("Firebase Connected Successfully!");

@@ -4,68 +4,110 @@
 <head>
 
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>ATR Important Notes</title>
 
 <link rel="stylesheet" href="style.css">
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
 <link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
 </head>
 
 <body>
 
+<!-- ================= HEADER ================= -->
+
 <header>
 
-<div class="logo">
+<div class="container">
+
+<a href="index.html" class="logo">
 
 <img src="images/LOGO.jpeg" alt="ATR Logo">
 
 <div>
+
 <h2>ATR Important Notes</h2>
+
 <p>India's Premium Study Platform</p>
-</div>
 
 </div>
 
-<button class="menu-toggle" id="menuToggle">
-☰
-</button>
+</a>
 
 <nav id="navbar">
-<a href="index.html">Home</a>
+
+<a href="index.html" class="active">Home</a>
+
 <a href="class10.html">Class 10</a>
+
 <a href="class11.html">Class 11</a>
+
 <a href="class12.html">Class 12</a>
+
 <a href="pages/premium.html">Premium</a>
+
 <a href="pages/login.html">Login</a>
+
 </nav>
 
-<button id="darkMode">🌙</button>
+<div class="header-buttons">
+
+<button id="darkMode">
+
+<i class="fas fa-moon"></i>
+
+</button>
+
+<button id="menuBtn">
+
+<i class="fas fa-bars"></i>
+
+</button>
+
+</div>
+
+</div>
 
 </header>
 
-<main>
+<!-- ================= HERO ================= -->
 
 <section class="hero">
 
-<div class="hero-content">
+<div class="container hero-grid">
 
-<p class="tag">
+<div class="hero-left">
+
+<span class="badge">
+
 🚀 India's Premium Study Platform
-</p>
+
+</span>
 
 <h1>
+
 Learn Smarter.<br>
+
 Score Higher.
+
 </h1>
 
-<p class="hero-text">
+<p>
+
 Free & Premium Notes, Previous Papers,
-Important Questions and Study Materials
-for Class 10, 11 & 12.
+Important Questions, Formula Sheets and
+Study Materials for Class 10, 11 & 12.
+
 </p>
 
 <div class="search-box">
@@ -76,12 +118,6 @@ id="search"
 placeholder="Search Notes, Subjects, Chapters...">
 
 <button id="searchBtn">
-    <i class="fas fa-search"></i>
-</button>
-
-</div>
-
-</div>
 
 <i class="fas fa-search"></i>
 
@@ -92,183 +128,27 @@ placeholder="Search Notes, Subjects, Chapters...">
 <div class="hero-buttons">
 
 <a href="#classes" class="btn">
+
 Browse Notes
+
 </a>
 
 <a href="pages/premium.html" class="btn secondary">
+
 Go Premium
+
 </a>
 
 </div>
-<div class="stats">
 
-    <div class="stat-card">
-        <h2>500+</h2>
-        <p>Premium Notes</p>
-    </div>
+</div>
 
-    <div class="stat-card">
-        <h2>10K+</h2>
-        <p>Happy Students</p>
-    </div>
+<div class="hero-right">
 
-    <div class="stat-card">
-        <h2>25K+</h2>
-        <p>Downloads</p>
-    </div>
-
-    <div class="stat-card">
-        <h2>24/7</h2>
-        <p>Support</p>
-    </div>
+<img src="images/study.png" alt="Study">
 
 </div>
 
 </div>
 
 </section>
-
-<!-- ================= Classes ================= -->
-
-<section class="classes" id="classes">
-
-<h2>Choose Your Class</h2>
-
-<p class="section-text">
-Select your class and access premium study materials.
-</p>
-
-<div class="class-grid">
-
-<div class="class-card">
-
-<div class="class-icon">📘</div>
-
-<h3>Class 10</h3>
-
-<p>
-Maths, Science, English, Social,
-Previous Papers & Important Questions.
-</p>
-
-<a href="class10.html">Open Notes</a>
-
-</div>
-
-<div class="class-card">
-
-<div class="class-icon">📙</div>
-
-<h3>Class 11</h3>
-
-<p>
-Physics, Chemistry,
-Mathematics & Biology.
-</p>
-
-<a href="class11.html">Open Notes</a>
-
-</div>
-
-<div class="class-card">
-
-<div class="class-icon">📕</div>
-
-<h3>Class 12</h3>
-
-<p>
-Board Exam Notes,
-PYQs,
-Formula Sheets &
-Important Questions.
-</p>
-
-<a href="class12.html">Open Notes</a>
-
-</div>
-
-</div>
-
-</section>
-<!-- ================= FEATURED NOTES ================= -->
-
-<section class="featured">
-
-    <h2>Featured Notes</h2>
-
-    <div class="featured-grid">
-
-        <div class="feature-card">
-            <h3>📄 Maths Notes</h3>
-            <p>Chapter-wise notes with formulas and examples.</p>
-        </div>
-
-        <div class="feature-card">
-            <h3>🧪 Science Notes</h3>
-            <p>Important concepts, diagrams and PYQs.</p>
-        </div>
-
-        <div class="feature-card">
-            <h3>📚 Previous Papers</h3>
-            <p>Practice with board exam question papers.</p>
-        </div>
-
-    </div>
-
-</section>
-
-<!-- ================= PREMIUM ================= -->
-
-<section class="premium">
-
-    <h2>Upgrade to Premium</h2>
-
-    <p>
-        Unlock exclusive notes, premium PDFs, important questions,
-        ad-free browsing and faster downloads.
-    </p>
-
-    <a href="pages/premium.html" class="btn">
-        Join Premium
-    </a>
-
-</section>
-
-<!-- ================= FOOTER ================= -->
-
-<footer>
-
-<div class="footer-content">
-
-<h2>ATR Important Notes</h2>
-
-<p>
-Helping students learn smarter every day.
-</p>
-
-<div class="footer-links">
-
-<a href="pages/about.html">About</a>
-
-<a href="pages/contact.html">Contact</a>
-
-<a href="pages/privacy.html">Privacy</a>
-
-<a href="pages/terms.html">Terms</a>
-
-</div>
-
-<p class="copyright">
-© 2026 ATR Important Notes. All Rights Reserved.
-</p>
-
-</div>
-
-</footer>
-
-</main>
-
-<script src="script.js"></script>
-
-</body>
-</html>

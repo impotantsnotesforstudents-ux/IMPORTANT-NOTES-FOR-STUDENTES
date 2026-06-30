@@ -545,6 +545,19 @@ footer{
     color:#111827;
 }
 
+/* ADD THESE LINES */
+.light-mode .hero{
+    background:#F8FAFC;
+}
+
+.light-mode .hero h1{
+    color:#111827;
+}
+
+.light-mode .badge{
+    color:#2563EB;
+}
+
 .light-mode .badge,
 .light-mode .search-box,
 .light-mode .stat-card,

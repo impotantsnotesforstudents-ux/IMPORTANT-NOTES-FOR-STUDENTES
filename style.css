@@ -1020,3 +1020,23 @@ overflow:hidden;
     border-radius:20px;
     font-weight:bold;
 }
+@media (max-width:768px){
+
+    .premium-container{
+        width:95%;
+        margin:auto;
+    }
+
+    .pricing-grid{
+        grid-template-columns:1fr;
+    }
+
+    .plan-card{
+        padding:25px;
+    }
+
+    .plan-card h1{
+        font-size:42px;
+    }
+
+}

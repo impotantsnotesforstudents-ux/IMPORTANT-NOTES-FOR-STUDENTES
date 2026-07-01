@@ -1,0 +1,38 @@
+import { auth, db, onAuthStateChanged } from "./firebase.js";
+
+import {
+    doc,
+    getDoc
+} from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
+
+onAuthStateChanged(auth, async (user) => {
+
+    if (!user) {
+        alert("Please login first.");
+        window.location.href = "pages/login.html";
+        return;
+    }
+
+    const docRef = doc(db, "users", user.uid);
+    const docSnap = await getDoc(docRef);
+
+    if (!docSnap.exists()) {
+        alert("User record not found.");
+        return;
+    }
+
+    const data = docSnap.data();
+
+    if (data.premium === true) {
+
+        console.log("Premium User");
+
+    } else {
+
+        alert("🔒 This is Premium Content.\n\nUpgrade to Premium to continue.");
+
+        window.location.href = "pages/premium.html";
+
+    }
+
+});

@@ -658,3 +658,199 @@ footer{
 }
 
 }
+/* ==========================================
+   PART 4 - PREMIUM UI
+========================================== */
+
+/* Card Hover */
+
+.stat-card,
+.class-card,
+.feature-card,
+.plan-card{
+
+    transition:all .35s ease;
+
+}
+
+.stat-card:hover,
+.class-card:hover,
+.feature-card:hover,
+.plan-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 20px 45px rgba(59,130,246,.25);
+
+}
+
+/* Glass Effect */
+
+header{
+
+    backdrop-filter:blur(18px);
+
+    background:rgba(15,23,42,.85);
+
+}
+
+/* Gradient Buttons */
+
+.btn{
+
+    background:linear-gradient(135deg,#2563EB,#3B82F6);
+
+    box-shadow:0 10px 25px rgba(37,99,235,.30);
+
+}
+
+.btn:hover{
+
+    background:linear-gradient(135deg,#1D4ED8,#2563EB);
+
+}
+
+/* Smooth Animation */
+
+.hero-left,
+.hero-right,
+.class-card,
+.feature-card,
+.plan-card,
+.stat-card{
+
+    animation:fadeUp .8s ease;
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(35px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* Nice Scrollbar */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#0F172A;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#3B82F6;
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#2563EB;
+
+}
+
+/* Selection */
+
+::selection{
+
+    background:#2563EB;
+
+    color:white;
+
+}
+
+/* Premium Ribbon */
+
+.popular{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.popular::before{
+
+    content:"BEST VALUE";
+
+    position:absolute;
+
+    top:20px;
+
+    right:-55px;
+
+    width:200px;
+
+    text-align:center;
+
+    background:#FFD700;
+
+    color:#111;
+
+    font-weight:bold;
+
+    transform:rotate(45deg);
+
+    padding:8px 0;
+
+}
+
+/* Floating Hero */
+
+.hero-right img{
+
+    animation:float 4s ease-in-out infinite;
+
+}
+
+@keyframes float{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-15px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* Footer */
+
+footer{
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+}

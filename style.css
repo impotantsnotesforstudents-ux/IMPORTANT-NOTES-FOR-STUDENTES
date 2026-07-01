@@ -887,3 +887,79 @@ cursor:pointer;
 #logoutBtn:hover{
 background:#dc2626;
 }
+/* ================= PREMIUM PAGE ================= */
+
+.premium-page{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:40px 20px;
+    background:linear-gradient(135deg,#0f172a,#1e293b);
+}
+
+.premium-container{
+    width:100%;
+    max-width:550px;
+    text-align:center;
+}
+
+.premium-container h1{
+    font-size:48px;
+    margin-bottom:15px;
+    color:#ffffff;
+}
+
+.premium-container p{
+    color:#cbd5e1;
+    margin-bottom:35px;
+}
+
+.price-card{
+    background:#ffffff;
+    color:#111827;
+    border-radius:20px;
+    padding:40px;
+    box-shadow:0 20px 40px rgba(0,0,0,.25);
+}
+
+.price-card h2{
+    font-size:48px;
+    color:#2563eb;
+    margin-bottom:25px;
+}
+
+.price-card h2 span{
+    font-size:20px;
+    color:#6b7280;
+}
+
+.price-card ul{
+    list-style:none;
+    padding:0;
+    margin:30px 0;
+    text-align:left;
+}
+
+.price-card li{
+    padding:12px 0;
+    font-size:18px;
+    border-bottom:1px solid #e5e7eb;
+}
+
+#buyPremium{
+    width:100%;
+    font-size:18px;
+    padding:16px;
+    border:none;
+    border-radius:12px;
+    background:#2563eb;
+    color:white;
+    cursor:pointer;
+    transition:.3s;
+}
+
+#buyPremium:hover{
+    background:#1d4ed8;
+    transform:translateY(-2px);
+}

@@ -852,3 +852,38 @@ header .container{
     color:#111827;
 
 }
+.user-profile{
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.profile-pic{
+width:42px;
+height:42px;
+border-radius:50%;
+border:2px solid #3b82f6;
+object-fit:cover;
+}
+
+.user-name{
+font-weight:600;
+color:white;
+max-width:150px;
+overflow:hidden;
+text-overflow:ellipsis;
+white-space:nowrap;
+}
+
+#logoutBtn{
+padding:8px 14px;
+background:#ef4444;
+border:none;
+color:white;
+border-radius:8px;
+cursor:pointer;
+}
+
+#logoutBtn:hover{
+background:#dc2626;
+}

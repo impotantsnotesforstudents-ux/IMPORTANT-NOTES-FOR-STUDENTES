@@ -15,24 +15,25 @@ onAuthStateChanged(auth, (user) => {
 
         userArea.innerHTML = `
             <div class="user-profile">
-                <img src="${photo}" class="profile-pic">
-                <span>${name}</span>
+
+                <img src="${photo}" class="profile-pic" alt="Profile">
+
+                <span class="user-name">${name}</span>
+
                 <button id="logoutBtn">Logout</button>
+
             </div>
         `;
 
-        document.getElementById("logoutBtn").addEventListener("click", async () => {
-
+        document.getElementById("logoutBtn").onclick = async () => {
             await signOut(auth);
-
-            window.location.reload();
-
-        });
+            location.reload();
+        };
 
     } else {
 
         userArea.innerHTML = `
-            <a href="pages/login.html" id="loginLink">Login</a>
+            <a href="pages/login.html" class="btn">Login</a>
         `;
 
     }

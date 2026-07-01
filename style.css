@@ -971,9 +971,9 @@ background:#dc2626;
 }
 
 .plan-card{
-   width:100%;
-box-sizing:border-box;
-overflow:hidden;
+    width:100%;
+    box-sizing:border-box;
+    overflow:hidden;
     background:#fff;
     color:#111;
     border-radius:20px;

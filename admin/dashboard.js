@@ -10,23 +10,32 @@ const premiumCount = document.getElementById("premiumCount");
 
 async function loadDashboard() {
 
-    const snapshot = await getDocs(collection(db, "users"));
+    try {
 
-    let totalUsers = 0;
-    let premiumUsers = 0;
+        const snapshot = await getDocs(collection(db, "users"));
 
-    snapshot.forEach((doc) => {
+        let totalUsers = 0;
+        let premiumUsers = 0;
 
-        totalUsers++;
+        snapshot.forEach((doc) => {
 
-        if (doc.data().premium === true) {
-            premiumUsers++;
-        }
+            totalUsers++;
 
-    });
+            if (doc.data().premium === true) {
+                premiumUsers++;
+            }
 
-    usersCount.innerText = totalUsers;
-    premiumCount.innerText = premiumUsers;
+        });
+
+        usersCount.textContent = totalUsers;
+        premiumCount.textContent = premiumUsers;
+
+    } catch (error) {
+
+        console.error(error);
+        alert("Error loading dashboard");
+
+    }
 
 }
 

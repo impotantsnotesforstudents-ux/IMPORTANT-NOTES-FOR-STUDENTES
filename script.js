@@ -12,7 +12,7 @@ if (menuBtn && navbar) {
 
     menuBtn.addEventListener("click", () => {
 
-        navbar.classList.toggle("show");
+        navbar.classList.toggle("active");
 
     });
 

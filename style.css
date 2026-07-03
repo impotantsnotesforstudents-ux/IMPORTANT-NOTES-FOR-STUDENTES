@@ -1,1782 +1,229 @@
-/* ===================================================
-   ATR IMPORTANT NOTES V4
-   Professional UI
-===================================================*/
+/* =========================================
+   ATR IMPORTANT NOTES
+   PART 1
+========================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
 html{
-scroll-behavior:smooth;
+    scroll-behavior:smooth;
 }
 
 body{
-font-family:"Poppins",sans-serif;
-background:#f8fafc;
-color:#111827;
-overflow-x:hidden;
+    font-family:'Poppins',sans-serif;
+    background:#0f172a;
+    color:#fff;
+    overflow-x:hidden;
 }
 
 img{
-max-width:100%;
-display:block;
+    max-width:100%;
+    display:block;
 }
 
 a{
-text-decoration:none;
-color:inherit;
+    text-decoration:none;
+    color:inherit;
 }
 
 .container{
-width:92%;
-max-width:1250px;
-margin:auto;
+    width:min(1200px,92%);
+    margin:auto;
 }
 
-/*================ HEADER ================*/
+/* ================= HEADER ================= */
 
 header{
-
-position:sticky;
-
-top:0;
-
-width:100%;
-
-background:rgba(255,255,255,.95);
-
-backdrop-filter:blur(15px);
-
-box-shadow:0 3px 20px rgba(0,0,0,.05);
-
-z-index:999;
-
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:#111827;
+    border-bottom:1px solid rgba(255,255,255,.08);
 }
 
 header .container{
-
-display:flex;
-
-justify-content:space-between;
-
-align-items:center;
-
-height:75px;
-
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    height:82px;
 }
 
+/* Logo */
+
 .logo{
+    display:flex;
+    align-items:center;
+    gap:14px;
+}
 
-display:flex;
+.logo img{
+    width:58px;
+    height:58px;
+    border-radius:50%;
+}
 
-align-items:center;
+.logo h2{
+    font-size:28px;
+    font-weight:700;
+    color:#fff;
+}
 
-gap:14px;
+.logo p{
+    font-size:13px;
+    color:#94a3b8;
+}
+
+/* Navigation */
+
+#navbar{
+    display:flex;
+    align-items:center;
+    gap:30px;
+}
+
+#navbar a{
+    color:#fff;
+    font-weight:600;
+    transition:.3s;
+}
+
+#navbar a:hover,
+#navbar a.active{
+    color:#3b82f6;
+}
+
+/* Right Buttons */
+
+.header-buttons{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.header-buttons button{
+    width:48px;
+    height:48px;
+    border:none;
+    border-radius:14px;
+    background:#1e293b;
+    color:#fff;
+    font-size:20px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.header-buttons button:hover{
+    background:#2563eb;
+}
+
+/* Mobile Menu Button */
+
+#menuBtn{
+    display:none;
+}
+
+/* User Area */
+
+#userArea{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.user-profile{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.profile-pic{
+    width:42px;
+    height:42px;
+    border-radius:50%;
+    object-fit:cover;
+    border:2px solid #3b82f6;
+}
+
+#logoutBtn{
+    padding:8px 14px;
+    border:none;
+    border-radius:10px;
+    background:#ef4444;
+    color:#fff;
+    cursor:pointer;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:768px){
+
+header .container{
+
+height:70px;
 
 }
 
 .logo img{
 
-width:48px;
+width:45px;
 
-height:48px;
-
-border-radius:50%;
+height:45px;
 
 }
 
 .logo h2{
 
-font-size:22px;
-
-font-weight:700;
-
-color:#2563eb;
+font-size:20px;
 
 }
 
 .logo p{
 
-font-size:12px;
-
-color:#64748b;
+display:none;
 
 }
-
-#navbar{
-
-display:flex;
-
-align-items:center;
-
-gap:28px;
-
-}
-
-#navbar a{
-
-font-size:15px;
-
-font-weight:600;
-
-transition:.3s;
-
-}
-
-#navbar a:hover{
-
-color:#2563eb;
-
-}
-
-.header-buttons{
-
-display:flex;
-
-gap:12px;
-
-}
-
-#darkMode,
 
 #menuBtn{
-
-width:44px;
-
-height:44px;
-
-border:none;
-
-border-radius:12px;
-
-cursor:pointer;
-
-background:#eef2ff;
-
-font-size:18px;
-
-transition:.3s;
-
-}
-
-#darkMode:hover,
-
-#menuBtn:hover{
-
-background:#2563eb;
-
-color:white;
-
-}
-
-/*================ HERO ================*/
-
-.hero{
-
-padding:70px 0;
-
-}
-
-.hero-grid{
-
-display:grid;
-
-grid-template-columns:1fr 1fr;
-
-gap:70px;
-
-align-items:center;
-
-}
-
-.badge{
-
-display:inline-block;
-
-background:#dbeafe;
-
-color:#2563eb;
-
-padding:10px 20px;
-
-border-radius:30px;
-
-font-size:14px;
-
-font-weight:600;
-
-margin-bottom:20px;
-
-}
-
-.hero h1{
-
-font-size:60px;
-
-font-weight:800;
-
-line-height:1.15;
-
-margin-bottom:25px;
-
-}
-
-.hero p{
-
-font-size:18px;
-
-line-height:1.8;
-
-color:#64748b;
-
-margin-bottom:35px;
-
-}
-
-.search-box{
-
-display:flex;
-
-width:100%;
-
-max-width:520px;
-
-background:white;
-
-border-radius:16px;
-
-overflow:hidden;
-
-box-shadow:0 10px 30px rgba(0,0,0,.08);
-
-}
-
-.search-box input{
-
-flex:1;
-
-border:none;
-
-outline:none;
-
-padding:18px;
-
-font-size:16px;
-
-}
-
-.search-box button{
-
-width:65px;
-
-border:none;
-
-background:#2563eb;
-
-color:white;
-
-font-size:20px;
-
-cursor:pointer;
-
-}
-
-.hero-buttons{
-
-display:flex;
-
-gap:15px;
-
-margin-top:30px;
-
-}
-
-.btn{
-
-padding:15px 30px;
-
-background:#2563eb;
-
-color:white;
-
-border-radius:14px;
-
-font-weight:600;
-
-transition:.3s;
-
-display:inline-block;
-
-}
-
-.btn:hover{
-
-transform:translateY(-4px);
-
-background:#1d4ed8;
-
-}
-
-.secondary{
-
-background:#0f172a;
-
-}
-/*================ SECTION =================*/
-
-section{
-
-padding:80px 0;
-
-}
-
-section h2{
-
-font-size:42px;
-
-font-weight:700;
-
-text-align:center;
-
-margin-bottom:15px;
-
-}
-
-section>p{
-
-text-align:center;
-
-color:#64748b;
-
-margin-bottom:55px;
-
-font-size:18px;
-
-}
-
-/*================ STATS =================*/
-
-.stats{
-
-padding-top:20px;
-
-}
-
-.stats-grid{
-
-display:grid;
-
-grid-template-columns:repeat(4,1fr);
-
-gap:25px;
-
-}
-
-.stat-card{
-
-background:white;
-
-padding:35px;
-
-border-radius:20px;
-
-text-align:center;
-
-box-shadow:0 10px 35px rgba(0,0,0,.08);
-
-transition:.35s;
-
-}
-
-.stat-card:hover{
-
-transform:translateY(-10px);
-
-}
-
-.stat-card i{
-
-font-size:42px;
-
-color:#2563eb;
-
-margin-bottom:18px;
-
-}
-
-.stat-card h2{
-
-font-size:38px;
-
-margin-bottom:8px;
-
-color:#2563eb;
-
-}
-
-.stat-card p{
-
-color:#64748b;
-
-}
-
-/*================ CLASS CARDS =================*/
-
-.class-grid{
-
-display:grid;
-
-grid-template-columns:repeat(3,1fr);
-
-gap:30px;
-
-}
-
-.class-card{
-
-background:white;
-
-border-radius:25px;
-
-padding:35px;
-
-text-align:center;
-
-box-shadow:0 10px 35px rgba(0,0,0,.08);
-
-transition:.35s;
-
-}
-
-.class-card:hover{
-
-transform:translateY(-10px);
-
-box-shadow:0 20px 45px rgba(37,99,235,.15);
-
-}
-
-.class-icon{
-
-font-size:65px;
-
-margin-bottom:20px;
-
-}
-
-.class-card h3{
-
-font-size:28px;
-
-margin-bottom:15px;
-
-}
-
-.class-card p{
-
-color:#64748b;
-
-line-height:1.8;
-
-margin-bottom:25px;
-
-}
-
-/*================ FEATURED =================*/
-
-.featured-grid{
-
-display:grid;
-
-grid-template-columns:repeat(3,1fr);
-
-gap:30px;
-
-}
-
-.feature-card{
-
-background:white;
-
-padding:35px;
-
-border-radius:22px;
-
-box-shadow:0 10px 35px rgba(0,0,0,.08);
-
-transition:.35s;
-
-}
-
-.feature-card:hover{
-
-transform:translateY(-8px);
-
-}
-
-.feature-card h3{
-
-font-size:24px;
-
-margin-bottom:18px;
-
-}
-
-.feature-card p{
-
-color:#64748b;
-
-line-height:1.8;
-
-}
-
-/*================ PREMIUM =================*/
-
-.premium{
-
-background:linear-gradient(135deg,#2563eb,#1e40af);
-
-border-radius:35px;
-
-margin:70px auto;
-
-width:92%;
-
-max-width:1250px;
-
-color:white;
-
-padding:70px;
-
-text-align:center;
-
-}
-
-.premium h2{
-
-color:white;
-
-}
-
-.premium p{
-
-color:#e2e8f0;
-
-max-width:700px;
-
-margin:auto auto 40px;
-
-line-height:1.9;
-
-}
-
-.premium-buttons{
 
 display:flex;
 
 justify-content:center;
 
-gap:20px;
-
-flex-wrap:wrap;
-
-}
-
-.premium .btn{
-
-background:white;
-
-color:#2563eb;
-
-font-weight:700;
-
-}
-
-.premium .btn:hover{
-
-background:#f1f5f9;
-
-}
-
-.premium .secondary{
-
-background:#0f172a;
-
-color:white;
-
-}
-/* ===================================================
-   ATR IMPORTANT NOTES V4
-   Professional UI
-===================================================*/
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
-html{
-scroll-behavior:smooth;
-}
-
-body{
-font-family:"Poppins",sans-serif;
-background:#f8fafc;
-color:#111827;
-overflow-x:hidden;
-}
-
-img{
-max-width:100%;
-display:block;
-}
-
-a{
-text-decoration:none;
-color:inherit;
-}
-
-.container{
-width:92%;
-max-width:1250px;
-margin:auto;
-}
-
-/*================ HEADER ================*/
-
-header{
-
-position:sticky;
-
-top:0;
-
-width:100%;
-
-background:rgba(255,255,255,.95);
-
-backdrop-filter:blur(15px);
-
-box-shadow:0 3px 20px rgba(0,0,0,.05);
-
-z-index:999;
-
-}
-
-header .container{
-
-display:flex;
-
-justify-content:space-between;
-
-align-items:center;
-
-height:75px;
-
-}
-
-.logo{
-
-display:flex;
-
-align-items:center;
-
-gap:14px;
-
-}
-
-.logo img{
-
-width:48px;
-
-height:48px;
-
-border-radius:50%;
-
-}
-
-.logo h2{
-
-font-size:22px;
-
-font-weight:700;
-
-color:#2563eb;
-
-}
-
-.logo p{
-
-font-size:12px;
-
-color:#64748b;
-
-}
-
-#navbar{
-
-display:flex;
-
-align-items:center;
-
-gap:28px;
-
-}
-
-#navbar a{
-
-font-size:15px;
-
-font-weight:600;
-
-transition:.3s;
-
-}
-
-#navbar a:hover{
-
-color:#2563eb;
-
-}
-
-.header-buttons{
-
-display:flex;
-
-gap:12px;
-
-}
-
-#darkMode,
-
-#menuBtn{
-
-width:44px;
-
-height:44px;
-
-border:none;
-
-border-radius:12px;
-
-cursor:pointer;
-
-background:#eef2ff;
-
-font-size:18px;
-
-transition:.3s;
-
-}
-
-#darkMode:hover,
-
-#menuBtn:hover{
-
-background:#2563eb;
-
-color:white;
-
-}
-
-/*================ HERO ================*/
-
-.hero{
-
-padding:70px 0;
-
-}
-
-.hero-grid{
-
-display:grid;
-
-grid-template-columns:1fr 1fr;
-
-gap:70px;
-
 align-items:center;
 
 }
-
-.badge{
-
-display:inline-block;
-
-background:#dbeafe;
-
-color:#2563eb;
-
-padding:10px 20px;
-
-border-radius:30px;
-
-font-size:14px;
-
-font-weight:600;
-
-margin-bottom:20px;
-
-}
-
-.hero h1{
-
-font-size:60px;
-
-font-weight:800;
-
-line-height:1.15;
-
-margin-bottom:25px;
-
-}
-
-.hero p{
-
-font-size:18px;
-
-line-height:1.8;
-
-color:#64748b;
-
-margin-bottom:35px;
-
-}
-
-.search-box{
-
-display:flex;
-
-width:100%;
-
-max-width:520px;
-
-background:white;
-
-border-radius:16px;
-
-overflow:hidden;
-
-box-shadow:0 10px 30px rgba(0,0,0,.08);
-
-}
-
-.search-box input{
-
-flex:1;
-
-border:none;
-
-outline:none;
-
-padding:18px;
-
-font-size:16px;
-
-}
-
-.search-box button{
-
-width:65px;
-
-border:none;
-
-background:#2563eb;
-
-color:white;
-
-font-size:20px;
-
-cursor:pointer;
-
-}
-
-.hero-buttons{
-
-display:flex;
-
-gap:15px;
-
-margin-top:30px;
-
-}
-
-.btn{
-
-padding:15px 30px;
-
-background:#2563eb;
-
-color:white;
-
-border-radius:14px;
-
-font-weight:600;
-
-transition:.3s;
-
-display:inline-block;
-
-}
-
-.btn:hover{
-
-transform:translateY(-4px);
-
-background:#1d4ed8;
-
-}
-
-.secondary{
-
-background:#0f172a;
-
-}
-/*================ WHY CHOOSE US =================*/
-
-.why{
-
-padding:90px 0;
-
-}
-
-.why-grid{
-
-display:grid;
-
-grid-template-columns:repeat(4,1fr);
-
-gap:25px;
-
-margin-top:50px;
-
-}
-
-.why-card{
-
-background:white;
-
-padding:35px;
-
-border-radius:22px;
-
-text-align:center;
-
-box-shadow:0 12px 35px rgba(0,0,0,.08);
-
-transition:.35s;
-
-}
-
-.why-card:hover{
-
-transform:translateY(-10px);
-
-box-shadow:0 20px 45px rgba(37,99,235,.15);
-
-}
-
-.why-card i{
-
-font-size:45px;
-
-margin-bottom:18px;
-
-color:#2563eb;
-
-}
-
-.why-card h3{
-
-margin-bottom:12px;
-
-font-size:22px;
-
-}
-
-.why-card p{
-
-color:#64748b;
-
-line-height:1.7;
-
-}
-
-/*================ PREMIUM PLANS =================*/
-
-.pricing-grid{
-
-display:grid;
-
-grid-template-columns:repeat(3,1fr);
-
-gap:30px;
-
-margin-top:60px;
-
-}
-
-.plan-card{
-
-background:white;
-
-border-radius:28px;
-
-padding:40px;
-
-text-align:center;
-
-box-shadow:0 15px 40px rgba(0,0,0,.08);
-
-position:relative;
-
-transition:.35s;
-
-overflow:hidden;
-
-}
-
-.plan-card:hover{
-
-transform:translateY(-12px);
-
-}
-
-.plan-card h2{
-
-font-size:30px;
-
-margin-bottom:15px;
-
-}
-
-.plan-card h1{
-
-font-size:58px;
-
-color:#2563eb;
-
-margin:25px 0;
-
-}
-
-.plan-card ul{
-
-list-style:none;
-
-margin:30px 0;
-
-}
-
-.plan-card li{
-
-padding:12px 0;
-
-border-bottom:1px solid #eee;
-
-}
-
-.plan-card .btn{
-
-width:100%;
-
-}
-
-.popular{
-
-border:4px solid gold;
-
-transform:scale(1.05);
-
-}
-
-.popular:hover{
-
-transform:scale(1.08);
-
-}
-
-.badge{
-
-position:absolute;
-
-top:18px;
-
-right:-45px;
-
-background:#f59e0b;
-
-color:white;
-
-padding:8px 60px;
-
-transform:rotate(45deg);
-
-font-size:12px;
-
-font-weight:bold;
-
-}
-
-/*================ GLASS EFFECT =================*/
-
-.stat-card,
-.class-card,
-.feature-card,
-.plan-card,
-.why-card{
-
-backdrop-filter:blur(20px);
-
-}
-
-/*================ BUTTON EFFECT =================*/
-
-.btn{
-
-position:relative;
-
-overflow:hidden;
-
-}
-
-.btn::before{
-
-content:"";
-
-position:absolute;
-
-top:0;
-
-left:-120%;
-
-width:120%;
-
-height:100%;
-
-background:rgba(255,255,255,.25);
-
-transform:skewX(-25deg);
-
-transition:.5s;
-
-}
-
-.btn:hover::before{
-
-left:120%;
-
-}
-
-/*================ MOBILE =================*/
-
-@media(max-width:992px){
-
-.why-grid,
-.pricing-grid{
-
-grid-template-columns:1fr;
-
-}
-
-.popular{
-
-transform:none;
-
-}
-
-}
-/*================ WHY CHOOSE US =================*/
-
-.why{
-
-padding:90px 0;
-
-}
-
-.why-grid{
-
-display:grid;
-
-grid-template-columns:repeat(4,1fr);
-
-gap:25px;
-
-margin-top:50px;
-
-}
-
-.why-card{
-
-background:white;
-
-padding:35px;
-
-border-radius:22px;
-
-text-align:center;
-
-box-shadow:0 12px 35px rgba(0,0,0,.08);
-
-transition:.35s;
-
-}
-
-.why-card:hover{
-
-transform:translateY(-10px);
-
-box-shadow:0 20px 45px rgba(37,99,235,.15);
-
-}
-
-.why-card i{
-
-font-size:45px;
-
-margin-bottom:18px;
-
-color:#2563eb;
-
-}
-
-.why-card h3{
-
-margin-bottom:12px;
-
-font-size:22px;
-
-}
-
-.why-card p{
-
-color:#64748b;
-
-line-height:1.7;
-
-}
-
-/*================ PREMIUM PLANS =================*/
-
-.pricing-grid{
-
-display:grid;
-
-grid-template-columns:repeat(3,1fr);
-
-gap:30px;
-
-margin-top:60px;
-
-}
-
-.plan-card{
-
-background:white;
-
-border-radius:28px;
-
-padding:40px;
-
-text-align:center;
-
-box-shadow:0 15px 40px rgba(0,0,0,.08);
-
-position:relative;
-
-transition:.35s;
-
-overflow:hidden;
-
-}
-
-.plan-card:hover{
-
-transform:translateY(-12px);
-
-}
-
-.plan-card h2{
-
-font-size:30px;
-
-margin-bottom:15px;
-
-}
-
-.plan-card h1{
-
-font-size:58px;
-
-color:#2563eb;
-
-margin:25px 0;
-
-}
-
-.plan-card ul{
-
-list-style:none;
-
-margin:30px 0;
-
-}
-
-.plan-card li{
-
-padding:12px 0;
-
-border-bottom:1px solid #eee;
-
-}
-
-.plan-card .btn{
-
-width:100%;
-
-}
-
-.popular{
-
-border:4px solid gold;
-
-transform:scale(1.05);
-
-}
-
-.popular:hover{
-
-transform:scale(1.08);
-
-}
-
-.badge{
-
-position:absolute;
-
-top:18px;
-
-right:-45px;
-
-background:#f59e0b;
-
-color:white;
-
-padding:8px 60px;
-
-transform:rotate(45deg);
-
-font-size:12px;
-
-font-weight:bold;
-
-}
-
-/*================ GLASS EFFECT =================*/
-
-.stat-card,
-.class-card,
-.feature-card,
-.plan-card,
-.why-card{
-
-backdrop-filter:blur(20px);
-
-}
-
-/*================ BUTTON EFFECT =================*/
-
-.btn{
-
-position:relative;
-
-overflow:hidden;
-
-}
-
-.btn::before{
-
-content:"";
-
-position:absolute;
-
-top:0;
-
-left:-120%;
-
-width:120%;
-
-height:100%;
-
-background:rgba(255,255,255,.25);
-
-transform:skewX(-25deg);
-
-transition:.5s;
-
-}
-
-.btn:hover::before{
-
-left:120%;
-
-}
-
-/*================ MOBILE =================*/
-
-@media(max-width:992px){
-
-.why-grid,
-.pricing-grid{
-
-grid-template-columns:1fr;
-
-}
-
-.popular{
-
-transform:none;
-
-}
-
-}
-/*==================================================
-          ATR V4 PREMIUM EFFECTS
-==================================================*/
-
-/* Background */
-
-body{
-    background:linear-gradient(180deg,#f8fbff,#eef5ff);
-}
-
-/* Header */
-
-header{
-
-    transition:.35s;
-
-}
-
-header.scrolled{
-
-    box-shadow:0 15px 40px rgba(0,0,0,.12);
-
-}
-
-/* Hero */
-
-.hero{
-
-    position:relative;
-
-    overflow:hidden;
-
-}
-
-.hero::before{
-
-    content:"";
-
-    position:absolute;
-
-    width:600px;
-
-    height:600px;
-
-    background:#3b82f6;
-
-    border-radius:50%;
-
-    top:-250px;
-
-    right:-250px;
-
-    opacity:.08;
-
-}
-
-.hero::after{
-
-    content:"";
-
-    position:absolute;
-
-    width:400px;
-
-    height:400px;
-
-    background:#2563eb;
-
-    border-radius:50%;
-
-    left:-180px;
-
-    bottom:-180px;
-
-    opacity:.06;
-
-}
-
-/* Cards */
-
-.stat-card,
-.class-card,
-.feature-card,
-.plan-card,
-.why-card{
-
-    border:1px solid rgba(255,255,255,.7);
-
-    background:rgba(255,255,255,.85);
-
-}
-
-/* Hover */
-
-.stat-card:hover,
-.class-card:hover,
-.feature-card:hover,
-.plan-card:hover,
-.why-card:hover{
-
-    transform:translateY(-12px);
-
-    box-shadow:0 25px 60px rgba(37,99,235,.15);
-
-}
-
-/* Hero Image */
-
-.hero-right img{
-
-    filter:drop-shadow(0 25px 40px rgba(37,99,235,.25));
-
-}
-
-/* Buttons */
-
-.btn{
-
-    border-radius:16px;
-
-    transition:.35s;
-
-}
-
-.btn:hover{
-
-    letter-spacing:.4px;
-
-}
-
-/* Search */
-
-.search-box{
-
-    border:2px solid transparent;
-
-}
-
-.search-box:focus-within{
-
-    border-color:#2563eb;
-
-}
-
-/* Smooth */
-
-*{
-
-    transition:
-
-    background .3s,
-
-    color .3s,
-
-    transform .3s,
-
-    box-shadow .3s;
-
-}
-
-/* Scrollbar */
-
-::-webkit-scrollbar{
-
-    width:10px;
-
-}
-
-::-webkit-scrollbar-track{
-
-    background:#e2e8f0;
-
-}
-
-::-webkit-scrollbar-thumb{
-
-    background:#2563eb;
-
-    border-radius:50px;
-
-}
-
-::-webkit-scrollbar-thumb:hover{
-
-    background:#1d4ed8;
-
-}
-
-/* Selection */
-
-::selection{
-
-    background:#2563eb;
-
-    color:white;
-
-}
-
-/* Images */
-
-img{
-
-    user-select:none;
-
-}
-
-/* Floating */
-
-@keyframes floating{
-
-0%{
-
-transform:translateY(0);
-
-}
-
-50%{
-
-transform:translateY(-12px);
-
-}
-
-100%{
-
-transform:translateY(0);
-
-}
-
-}
-
-.hero-right img{
-
-animation:floating 4s infinite ease-in-out;
-
-}
-
-/* Footer */
-
-footer{
-
-position:relative;
-
-overflow:hidden;
-
-}
-
-footer::before{
-
-content:"";
-
-position:absolute;
-
-width:350px;
-
-height:350px;
-
-border-radius:50%;
-
-background:#2563eb;
-
-opacity:.08;
-
-right:-150px;
-
-bottom:-150px;
-
-}
-
-/* Loading Animation */
-
-.fade{
-
-animation:fade .7s ease;
-
-}
-
-@keyframes fade{
-
-from{
-
-opacity:0;
-
-transform:translateY(20px);
-
-}
-
-to{
-
-opacity:1;
-
-transform:translateY(0);
-
-}
-
-}
-/*==========================================
-        ATR V4 FINAL CSS
-==========================================*/
-
-/* Mobile Menu */
-
-#navbar{
-
-transition:.35s;
-
-}
-
-@media(max-width:768px){
 
 #navbar{
 
 position:fixed;
 
-top:75px;
+top:70px;
 
 right:-100%;
 
-width:280px;
+width:270px;
 
-height:calc(100vh - 75px);
+height:calc(100vh - 70px);
 
-background:#ffffff;
+background:#111827;
 
 display:flex;
 
 flex-direction:column;
 
+align-items:flex-start;
+
 padding:30px;
 
-gap:20px;
+gap:22px;
 
-box-shadow:-10px 0 30px rgba(0,0,0,.15);
-
-z-index:999;
+transition:.35s;
 
 }
 
@@ -1786,272 +233,18 @@ right:0;
 
 }
 
-#navbar a{
+.header-buttons{
 
-font-size:18px;
-
-font-weight:600;
-
-padding:12px;
-
-border-radius:12px;
+gap:10px;
 
 }
 
-#navbar a:hover{
+.header-buttons button{
 
-background:#eef4ff;
+width:44px;
+
+height:44px;
 
 }
 
 }
-
-/* Profile */
-
-.user-profile{
-
-display:flex;
-
-align-items:center;
-
-gap:12px;
-
-padding:8px 15px;
-
-background:#eef4ff;
-
-border-radius:50px;
-
-}
-
-.profile-pic{
-
-width:42px;
-
-height:42px;
-
-border-radius:50%;
-
-border:2px solid #2563eb;
-
-object-fit:cover;
-
-}
-
-/* Logout */
-
-#logoutBtn{
-
-background:#ef4444;
-
-color:#fff;
-
-border:none;
-
-padding:8px 15px;
-
-border-radius:10px;
-
-cursor:pointer;
-
-transition:.3s;
-
-}
-
-#logoutBtn:hover{
-
-background:#dc2626;
-
-}
-
-/* Smooth Images */
-
-img{
-
-transition:.4s;
-
-}
-
-img:hover{
-
-transform:scale(1.02);
-
-}
-
-/* Cards */
-
-.stat-card,
-.class-card,
-.feature-card,
-.plan-card,
-.why-card{
-
-overflow:hidden;
-
-}
-
-/* Hover Border */
-
-.stat-card:hover,
-.class-card:hover,
-.feature-card:hover,
-.plan-card:hover{
-
-border:1px solid #2563eb;
-
-}
-
-/* Buttons */
-
-button{
-
-font-family:"Poppins",sans-serif;
-
-}
-
-/* Inputs */
-
-input{
-
-font-family:"Poppins",sans-serif;
-
-}
-
-/* Links */
-
-a{
-
-transition:.3s;
-
-}
-
-/* Footer */
-
-footer a:hover{
-
-padding-left:8px;
-
-}
-
-/* Glass */
-
-.glass{
-
-background:rgba(255,255,255,.7);
-
-backdrop-filter:blur(18px);
-
-}
-
-/* Loader */
-
-.loader{
-
-width:40px;
-
-height:40px;
-
-border-radius:50%;
-
-border:4px solid #ddd;
-
-border-top:4px solid #2563eb;
-
-animation:spin 1s linear infinite;
-
-}
-
-@keyframes spin{
-
-100%{
-
-transform:rotate(360deg);
-
-}
-
-}
-
-/* Mobile Hero */
-
-@media(max-width:768px){
-
-.hero{
-
-padding-top:40px;
-
-}
-
-.hero h1{
-
-font-size:34px;
-
-}
-
-.hero p{
-
-font-size:16px;
-
-}
-
-.hero-buttons{
-
-flex-direction:column;
-
-}
-
-.hero-buttons .btn{
-
-width:100%;
-
-}
-
-}
-
-/* Dark Theme */
-
-.dark{
-
-background:#0f172a;
-
-color:white;
-
-}
-
-.dark header{
-
-background:#111827;
-
-}
-
-.dark .stat-card,
-.dark .class-card,
-.dark .feature-card,
-.dark .plan-card{
-
-background:#1e293b;
-
-color:white;
-
-}
-
-.dark .search-box{
-
-background:#1e293b;
-
-}
-
-.dark .search-box input{
-
-background:#1e293b;
-
-color:white;
-
-}
-
-.dark footer{
-
-background:#020617;
-
-}
-
-/* End */

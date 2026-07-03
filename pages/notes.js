@@ -7,7 +7,8 @@ getDocs
 
 const notesContainer = document.getElementById("notesContainer");
 const classFilter = document.getElementById("classFilter");
-
+const subjectFilter = document.getElementById("subjectFilter");
+const searchBox = document.getElementById("searchBox");
 async function loadNotes(){
 
 notesContainer.innerHTML="";

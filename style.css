@@ -82,13 +82,13 @@ header .container{
 
 #navbar{
     display:flex;
-    gap:25px;
     align-items:center;
+    gap:20px;
 }
 
 #navbar a{
-    transition:.3s;
-    font-weight:600;
+    font-size:15px;
+    font-weight:500;
 }
 
 #navbar a:hover{

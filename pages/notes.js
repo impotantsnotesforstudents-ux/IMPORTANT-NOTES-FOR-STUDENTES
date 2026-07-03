@@ -1,41 +1,51 @@
 import { db } from "../firebase.js";
+
 import {
-    collection,
-    getDocs
+collection,
+getDocs
 } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
 
 const notesContainer = document.getElementById("notesContainer");
+const classFilter = document.getElementById("classFilter");
 
-async function loadNotes() {
+async function loadNotes(){
 
-    notesContainer.innerHTML = "";
+notesContainer.innerHTML="";
 
-    const snapshot = await getDocs(collection(db, "notes"));
+const snapshot=await getDocs(collection(db,"notes"));
 
-    snapshot.forEach((doc) => {
+snapshot.forEach(doc=>{
 
-        const note = doc.data();
+const note=doc.data();
 
-        notesContainer.innerHTML += `
-            <div class="note-card">
+if(classFilter.value!="all" && note.class!=classFilter.value){
+return;
+}
 
-                <h2>${note.chapter}</h2>
+notesContainer.innerHTML+=`
 
-                <p>Class ${note.class}</p>
+<div class="note-card">
 
-                <p>${note.subject}</p>
+<h2>${note.chapter}</h2>
 
-                <a href="../${note.pdf}" target="_blank" class="btn">
+<p>Class ${note.class}</p>
 
-                    ${note.premium ? "🔒 Premium" : "📄 Open PDF"}
+<p>${note.subject}</p>
 
-                </a>
+<a href="../${note.pdf}" class="btn" target="_blank">
 
-            </div>
-        `;
+${note.premium?"🔒 Premium":"📄 Open PDF"}
 
-    });
+</a>
+
+</div>
+
+`;
+
+});
 
 }
+
+classFilter.addEventListener("change",loadNotes);
 
 loadNotes();

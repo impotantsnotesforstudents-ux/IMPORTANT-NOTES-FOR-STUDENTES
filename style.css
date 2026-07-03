@@ -132,34 +132,23 @@ header .container{
 /* ================= HERO ================= */
 
 .hero{
-    padding:80px 0;
+    padding:45px 0;
 }
 
 .hero-grid{
     display:grid;
     grid-template-columns:1fr 1fr;
-    gap:50px;
+    gap:40px;
     align-items:center;
 }
 
-.badge{
-    display:inline-block;
-    background:#1E293B;
-    color:#38BDF8;
-    padding:10px 18px;
-    border-radius:50px;
-    margin-bottom:20px;
-}
-
 .hero h1{
-    font-size:60px;
-    margin-bottom:20px;
+    font-size:48px;
+    line-height:1.2;
 }
 
 .hero p{
-    color:#94A3B8;
-    line-height:1.8;
-    margin-bottom:30px;
+    font-size:17px;
 }
 
 .hero-buttons{

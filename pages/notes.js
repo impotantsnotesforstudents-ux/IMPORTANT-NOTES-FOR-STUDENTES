@@ -45,32 +45,36 @@ async function loadNotes() {
             return;
         }
 
-        notesContainer.innerHTML += `
-            <div class="note-card">
+      notesContainer.innerHTML += `
+<div class="note-card">
 
-                <h2>${note.chapter}</h2>
+<div class="note-top">
 
-                <p>📘 Class ${note.class}</p>
+<span class="class-badge">
+Class ${note.class}
+</span>
 
-                <p>📚 ${note.subject}</p>
+<span class="${note.premium ? "premium-badge" : "free-badge"}">
 
-                <a href="../${note.pdf}" class="btn" target="_blank">
+${note.premium ? "👑 Premium" : "🆓 Free"}
 
-                    ${
-                        note.premium
-                            ? "🔒 Premium"
-                            : "📄 Open PDF"
-                    }
+</span>
 
-                </a>
+</div>
 
-            </div>
-        `;
+<h2>${note.chapter}</h2>
 
-    });
+<p>📚 ${note.subject}</p>
 
-}
+<a href="../${note.pdf}" target="_blank" class="btn">
 
+${note.premium ? "🔒 Buy Now" : "📄 Open PDF"}
+
+</a>
+
+</div>
+`;
+    }
 classFilter.addEventListener("change", loadNotes);
 subjectFilter.addEventListener("change", loadNotes);
 searchBox.addEventListener("input", loadNotes);

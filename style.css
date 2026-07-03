@@ -66,18 +66,18 @@ header .container{
 }
 
 .logo img{
-    width:55px;
-    height:55px;
-    border-radius:50%;
+    width:45px;
+    height:45px;
 }
 
 .logo h2{
-    font-size:28px;
+    font-size:22px;
+    margin:0;
 }
 
 .logo p{
-    font-size:13px;
-    color:#94A3B8;
+    font-size:11px;
+    margin-top:2px;
 }
 
 #navbar{

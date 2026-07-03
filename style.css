@@ -1187,3 +1187,50 @@ width:600px;
 }
 
 }
+/* ================= NOTES PAGE ================= */
+
+.note-card{
+
+background:#fff;
+
+padding:25px;
+
+border-radius:18px;
+
+margin:20px 0;
+
+box-shadow:0 10px 25px rgba(0,0,0,.15);
+
+}
+
+.note-card h2{
+
+margin-bottom:10px;
+
+}
+
+.note-card p{
+
+margin:8px 0;
+
+color:#555;
+
+}
+
+.note-card .btn{
+
+display:inline-block;
+
+margin-top:15px;
+
+padding:12px 22px;
+
+background:#2563eb;
+
+color:#fff;
+
+border-radius:10px;
+
+text-decoration:none;
+
+}

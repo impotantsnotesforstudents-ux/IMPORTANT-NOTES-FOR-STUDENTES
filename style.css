@@ -771,3 +771,239 @@ footer{
 }
 
 }
+/* =========================================
+   FINAL POLISH
+========================================= */
+
+/* Scrollbar */
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:#0f172a;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#2563eb;
+    border-radius:20px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background:#1d4ed8;
+}
+
+/* Selection */
+
+::selection{
+    background:#2563eb;
+    color:#fff;
+}
+
+/* Images */
+
+img{
+    user-select:none;
+    -webkit-user-drag:none;
+}
+
+/* Card Hover */
+
+.stat-card,
+.class-card,
+.feature-card{
+    transition:.35s ease;
+}
+
+.stat-card:hover,
+.class-card:hover,
+.feature-card:hover{
+    transform:translateY(-10px);
+}
+
+/* Buttons */
+
+.btn{
+    position:relative;
+    overflow:hidden;
+}
+
+.btn::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:-100%;
+    width:100%;
+    height:100%;
+    background:rgba(255,255,255,.18);
+    transition:.4s;
+}
+
+.btn:hover::before{
+    left:100%;
+}
+
+/* Fade Animation */
+
+.fade{
+    animation:fade .8s ease;
+}
+
+@keyframes fade{
+
+0%{
+opacity:0;
+transform:translateY(25px);
+}
+
+100%{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+/* Floating Hero */
+
+.hero-right img{
+
+animation:float 5s ease-in-out infinite;
+
+}
+
+@keyframes float{
+
+0%,100%{
+transform:translateY(0);
+}
+
+50%{
+transform:translateY(-12px);
+}
+
+}
+
+/* Dark Theme */
+
+body.dark{
+
+background:#020617;
+
+color:#fff;
+
+}
+
+body.dark header{
+
+background:#0f172a;
+
+}
+
+body.dark .stat-card,
+body.dark .class-card,
+body.dark .feature-card{
+
+background:#1e293b;
+
+}
+
+body.dark .search-box input{
+
+background:#1e293b;
+
+}
+
+body.dark footer{
+
+background:#000814;
+
+}
+
+/* Mobile Fixes */
+
+@media(max-width:768px){
+
+body{
+
+overflow-x:hidden;
+
+}
+
+.hero{
+
+padding-top:40px;
+
+}
+
+.hero h1{
+
+font-size:36px;
+
+line-height:1.2;
+
+}
+
+.hero-right img{
+
+width:260px;
+
+margin:auto;
+
+}
+
+.search-box{
+
+width:100%;
+
+}
+
+.stats{
+
+padding-top:10px;
+
+}
+
+.stat-card{
+
+padding:22px;
+
+}
+
+.class-card{
+
+padding:25px;
+
+}
+
+.feature-card{
+
+padding:25px;
+
+}
+
+footer{
+
+padding:50px 0 20px;
+
+}
+
+}
+
+/* Desktop */
+
+@media(min-width:1200px){
+
+.hero h1{
+
+font-size:72px;
+
+}
+
+.hero-right img{
+
+width:600px;
+
+}
+
+}

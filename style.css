@@ -1738,3 +1738,320 @@ transform:translateY(0);
 }
 
 }
+/*==========================================
+        ATR V4 FINAL CSS
+==========================================*/
+
+/* Mobile Menu */
+
+#navbar{
+
+transition:.35s;
+
+}
+
+@media(max-width:768px){
+
+#navbar{
+
+position:fixed;
+
+top:75px;
+
+right:-100%;
+
+width:280px;
+
+height:calc(100vh - 75px);
+
+background:#ffffff;
+
+display:flex;
+
+flex-direction:column;
+
+padding:30px;
+
+gap:20px;
+
+box-shadow:-10px 0 30px rgba(0,0,0,.15);
+
+z-index:999;
+
+}
+
+#navbar.active{
+
+right:0;
+
+}
+
+#navbar a{
+
+font-size:18px;
+
+font-weight:600;
+
+padding:12px;
+
+border-radius:12px;
+
+}
+
+#navbar a:hover{
+
+background:#eef4ff;
+
+}
+
+}
+
+/* Profile */
+
+.user-profile{
+
+display:flex;
+
+align-items:center;
+
+gap:12px;
+
+padding:8px 15px;
+
+background:#eef4ff;
+
+border-radius:50px;
+
+}
+
+.profile-pic{
+
+width:42px;
+
+height:42px;
+
+border-radius:50%;
+
+border:2px solid #2563eb;
+
+object-fit:cover;
+
+}
+
+/* Logout */
+
+#logoutBtn{
+
+background:#ef4444;
+
+color:#fff;
+
+border:none;
+
+padding:8px 15px;
+
+border-radius:10px;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+#logoutBtn:hover{
+
+background:#dc2626;
+
+}
+
+/* Smooth Images */
+
+img{
+
+transition:.4s;
+
+}
+
+img:hover{
+
+transform:scale(1.02);
+
+}
+
+/* Cards */
+
+.stat-card,
+.class-card,
+.feature-card,
+.plan-card,
+.why-card{
+
+overflow:hidden;
+
+}
+
+/* Hover Border */
+
+.stat-card:hover,
+.class-card:hover,
+.feature-card:hover,
+.plan-card:hover{
+
+border:1px solid #2563eb;
+
+}
+
+/* Buttons */
+
+button{
+
+font-family:"Poppins",sans-serif;
+
+}
+
+/* Inputs */
+
+input{
+
+font-family:"Poppins",sans-serif;
+
+}
+
+/* Links */
+
+a{
+
+transition:.3s;
+
+}
+
+/* Footer */
+
+footer a:hover{
+
+padding-left:8px;
+
+}
+
+/* Glass */
+
+.glass{
+
+background:rgba(255,255,255,.7);
+
+backdrop-filter:blur(18px);
+
+}
+
+/* Loader */
+
+.loader{
+
+width:40px;
+
+height:40px;
+
+border-radius:50%;
+
+border:4px solid #ddd;
+
+border-top:4px solid #2563eb;
+
+animation:spin 1s linear infinite;
+
+}
+
+@keyframes spin{
+
+100%{
+
+transform:rotate(360deg);
+
+}
+
+}
+
+/* Mobile Hero */
+
+@media(max-width:768px){
+
+.hero{
+
+padding-top:40px;
+
+}
+
+.hero h1{
+
+font-size:34px;
+
+}
+
+.hero p{
+
+font-size:16px;
+
+}
+
+.hero-buttons{
+
+flex-direction:column;
+
+}
+
+.hero-buttons .btn{
+
+width:100%;
+
+}
+
+}
+
+/* Dark Theme */
+
+.dark{
+
+background:#0f172a;
+
+color:white;
+
+}
+
+.dark header{
+
+background:#111827;
+
+}
+
+.dark .stat-card,
+.dark .class-card,
+.dark .feature-card,
+.dark .plan-card{
+
+background:#1e293b;
+
+color:white;
+
+}
+
+.dark .search-box{
+
+background:#1e293b;
+
+}
+
+.dark .search-box input{
+
+background:#1e293b;
+
+color:white;
+
+}
+
+.dark footer{
+
+background:#020617;
+
+}
+
+/* End */

@@ -1443,3 +1443,298 @@ transform:none;
 }
 
 }
+/*==================================================
+          ATR V4 PREMIUM EFFECTS
+==================================================*/
+
+/* Background */
+
+body{
+    background:linear-gradient(180deg,#f8fbff,#eef5ff);
+}
+
+/* Header */
+
+header{
+
+    transition:.35s;
+
+}
+
+header.scrolled{
+
+    box-shadow:0 15px 40px rgba(0,0,0,.12);
+
+}
+
+/* Hero */
+
+.hero{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:600px;
+
+    height:600px;
+
+    background:#3b82f6;
+
+    border-radius:50%;
+
+    top:-250px;
+
+    right:-250px;
+
+    opacity:.08;
+
+}
+
+.hero::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:400px;
+
+    height:400px;
+
+    background:#2563eb;
+
+    border-radius:50%;
+
+    left:-180px;
+
+    bottom:-180px;
+
+    opacity:.06;
+
+}
+
+/* Cards */
+
+.stat-card,
+.class-card,
+.feature-card,
+.plan-card,
+.why-card{
+
+    border:1px solid rgba(255,255,255,.7);
+
+    background:rgba(255,255,255,.85);
+
+}
+
+/* Hover */
+
+.stat-card:hover,
+.class-card:hover,
+.feature-card:hover,
+.plan-card:hover,
+.why-card:hover{
+
+    transform:translateY(-12px);
+
+    box-shadow:0 25px 60px rgba(37,99,235,.15);
+
+}
+
+/* Hero Image */
+
+.hero-right img{
+
+    filter:drop-shadow(0 25px 40px rgba(37,99,235,.25));
+
+}
+
+/* Buttons */
+
+.btn{
+
+    border-radius:16px;
+
+    transition:.35s;
+
+}
+
+.btn:hover{
+
+    letter-spacing:.4px;
+
+}
+
+/* Search */
+
+.search-box{
+
+    border:2px solid transparent;
+
+}
+
+.search-box:focus-within{
+
+    border-color:#2563eb;
+
+}
+
+/* Smooth */
+
+*{
+
+    transition:
+
+    background .3s,
+
+    color .3s,
+
+    transform .3s,
+
+    box-shadow .3s;
+
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#e2e8f0;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#2563eb;
+
+    border-radius:50px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#1d4ed8;
+
+}
+
+/* Selection */
+
+::selection{
+
+    background:#2563eb;
+
+    color:white;
+
+}
+
+/* Images */
+
+img{
+
+    user-select:none;
+
+}
+
+/* Floating */
+
+@keyframes floating{
+
+0%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-12px);
+
+}
+
+100%{
+
+transform:translateY(0);
+
+}
+
+}
+
+.hero-right img{
+
+animation:floating 4s infinite ease-in-out;
+
+}
+
+/* Footer */
+
+footer{
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+footer::before{
+
+content:"";
+
+position:absolute;
+
+width:350px;
+
+height:350px;
+
+border-radius:50%;
+
+background:#2563eb;
+
+opacity:.08;
+
+right:-150px;
+
+bottom:-150px;
+
+}
+
+/* Loading Animation */
+
+.fade{
+
+animation:fade .7s ease;
+
+}
+
+@keyframes fade{
+
+from{
+
+opacity:0;
+
+transform:translateY(20px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}

@@ -45,18 +45,20 @@ ul{
 header{
     position:sticky;
     top:0;
-    z-index:1000;
+    width:100%;
     background:#111827;
-    border-bottom:1px solid rgba(255,255,255,.08);
+    padding:10px 0;
+    z-index:1000;
 }
 
 header .container{
+    width:95%;
+    max-width:1300px;
+    margin:auto;
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:18px 0;
 }
-
 .logo{
     display:flex;
     align-items:center;

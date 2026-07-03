@@ -1,175 +1,251 @@
-// ==============================
-// ATR IMPORTANT NOTES V2
+// ========================================
+// ATR IMPORTANT NOTES V4
 // script.js
-// ==============================
+// ========================================
 
-// ---------- Mobile Menu ----------
+document.addEventListener("DOMContentLoaded", () => {
 
-const menuBtn = document.getElementById("menuBtn");
-const navbar = document.getElementById("navbar");
+    // =========================
+    // Mobile Menu
+    // =========================
 
-if (menuBtn && navbar) {
+    const menuBtn = document.getElementById("menuBtn");
+    const navbar = document.getElementById("navbar");
 
-    menuBtn.addEventListener("click", () => {
+    if(menuBtn && navbar){
 
-        navbar.classList.toggle("active");
+        menuBtn.addEventListener("click",()=>{
 
-    });
+            navbar.classList.toggle("active");
 
-}
+            const icon = menuBtn.querySelector("i");
 
-// ---------- Dark / Light Mode ----------
+            if(navbar.classList.contains("active")){
 
-const darkBtn = document.getElementById("darkMode");
+                icon.classList.remove("fa-bars");
+                icon.classList.add("fa-xmark");
 
-if (darkBtn) {
+            }else{
 
-    if (localStorage.getItem("theme") === "light") {
+                icon.classList.remove("fa-xmark");
+                icon.classList.add("fa-bars");
 
-        document.body.classList.add("light-mode");
+            }
 
-        darkBtn.innerHTML = '<i class="fas fa-sun"></i>';
+        });
+
+        document.addEventListener("click",(e)=>{
+
+            if(
+                !navbar.contains(e.target) &&
+                !menuBtn.contains(e.target)
+            ){
+
+                navbar.classList.remove("active");
+
+                const icon = menuBtn.querySelector("i");
+
+                icon.classList.remove("fa-xmark");
+                icon.classList.add("fa-bars");
+
+            }
+
+        });
 
     }
 
-    darkBtn.addEventListener("click", () => {
+    // =========================
+    // Dark Mode
+    // =========================
 
-        document.body.classList.toggle("light-mode");
+    const darkBtn = document.getElementById("darkMode");
 
-        if (document.body.classList.contains("light-mode")) {
+    if(darkBtn){
 
-            localStorage.setItem("theme", "light");
+        if(localStorage.getItem("theme")==="dark"){
 
-            darkBtn.innerHTML = '<i class="fas fa-sun"></i>';
+            document.body.classList.add("dark");
 
-        } else {
+            darkBtn.innerHTML='<i class="fas fa-sun"></i>';
 
-            localStorage.setItem("theme", "dark");
+        }
 
-            darkBtn.innerHTML = '<i class="fas fa-moon"></i>';
+        darkBtn.addEventListener("click",()=>{
+
+            document.body.classList.toggle("dark");
+
+            if(document.body.classList.contains("dark")){
+
+                localStorage.setItem("theme","dark");
+
+                darkBtn.innerHTML='<i class="fas fa-sun"></i>';
+
+            }else{
+
+                localStorage.setItem("theme","light");
+
+                darkBtn.innerHTML='<i class="fas fa-moon"></i>';
+
+            }
+
+        });
+
+    }
+
+    // =========================
+    // Sticky Header
+    // =========================
+
+    const header=document.querySelector("header");
+
+    window.addEventListener("scroll",()=>{
+
+        if(window.scrollY>30){
+
+            header.classList.add("scrolled");
+
+        }else{
+
+            header.classList.remove("scrolled");
 
         }
 
     });
 
-}
+    // =========================
+    // Search
+    // =========================
 
-// ---------- Search ----------
+    const search=document.getElementById("search");
+    const searchBtn=document.getElementById("searchBtn");
 
-const searchInput = document.getElementById("search");
-const searchBtn = document.getElementById("searchBtn");
+    function doSearch(){
 
-function performSearch() {
+        if(!search) return;
 
-    if (!searchInput) return;
+        let value=search.value.toLowerCase().trim();
 
-    const value = searchInput.value.toLowerCase().trim();
+        if(value.includes("10")){
 
-    switch (value) {
+            location.href="class10.html";
 
-        case "class 10":
-        case "10":
-            window.location.href = "class10.html";
-            break;
+        }
 
-        case "class 11":
-        case "11":
-            window.location.href = "class11.html";
-            break;
+        else if(value.includes("11")){
 
-        case "class 12":
-        case "12":
-            window.location.href = "class12.html";
-            break;
+            location.href="class11.html";
 
-        case "maths":
-        case "mathematics":
-            window.location.href = "maths10.html";
-            break;
+        }
 
-        case "science":
-            window.location.href = "science10.html";
-            break;
+        else if(value.includes("12")){
 
-        case "premium":
-            window.location.href = "pages/premium.html";
-            break;
+            location.href="class12.html";
 
-        case "login":
-            window.location.href = "pages/login.html";
-            break;
+        }
 
-        default:
-            alert("No results found.");
+        else if(value.includes("premium")){
+
+            location.href="pages/premium.html";
+
+        }
+
+        else if(value.includes("login")){
+
+            location.href="pages/login.html";
+
+        }
+
+        else{
+
+            alert("No matching notes found.");
+
+        }
+
     }
 
-}
+    if(searchBtn){
 
-if (searchBtn) {
+        searchBtn.addEventListener("click",doSearch);
 
-    searchBtn.addEventListener("click", performSearch);
+    }
 
-}
+    if(search){
 
-if (searchInput) {
+        search.addEventListener("keypress",(e)=>{
 
-    searchInput.addEventListener("keydown", function(e){
+            if(e.key==="Enter"){
 
-        if(e.key === "Enter"){
+                doSearch();
 
-            performSearch();
+            }
+
+        });
+
+    }
+
+    // =========================
+    // Scroll To Top
+    // =========================
+
+    const topBtn=document.createElement("button");
+
+    topBtn.innerHTML='<i class="fas fa-arrow-up"></i>';
+
+    topBtn.style.position="fixed";
+    topBtn.style.right="20px";
+    topBtn.style.bottom="20px";
+    topBtn.style.width="50px";
+    topBtn.style.height="50px";
+    topBtn.style.borderRadius="50%";
+    topBtn.style.border="none";
+    topBtn.style.background="#2563eb";
+    topBtn.style.color="#fff";
+    topBtn.style.cursor="pointer";
+    topBtn.style.display="none";
+    topBtn.style.boxShadow="0 10px 25px rgba(0,0,0,.2)";
+    topBtn.style.zIndex="999";
+
+    document.body.appendChild(topBtn);
+
+    window.addEventListener("scroll",()=>{
+
+        if(window.scrollY>400){
+
+            topBtn.style.display="block";
+
+        }else{
+
+            topBtn.style.display="none";
 
         }
 
     });
 
-}
+    topBtn.onclick=()=>{
 
-// ---------- Scroll To Top ----------
+        window.scrollTo({
 
-const topBtn = document.createElement("button");
+            top:0,
 
-topBtn.innerHTML = "⬆";
+            behavior:"smooth"
 
-topBtn.id = "topBtn";
+        });
 
-document.body.appendChild(topBtn);
+    };
 
-topBtn.style.position = "fixed";
-topBtn.style.right = "20px";
-topBtn.style.bottom = "20px";
-topBtn.style.width = "50px";
-topBtn.style.height = "50px";
-topBtn.style.border = "none";
-topBtn.style.borderRadius = "50%";
-topBtn.style.background = "#2563EB";
-topBtn.style.color = "#fff";
-topBtn.style.fontSize = "20px";
-topBtn.style.cursor = "pointer";
-topBtn.style.display = "none";
-topBtn.style.boxShadow = "0 10px 25px rgba(0,0,0,.3)";
+    // =========================
+    // Fade Animation
+    // =========================
 
-window.addEventListener("scroll", () => {
+    const cards=document.querySelectorAll(
 
-    if (window.scrollY > 300) {
+        ".stat-card,.class-card,.feature-card,.plan-card"
 
-        topBtn.style.display = "block";
+    );
 
-    } else {
+    cards.forEach(card=>{
 
-        topBtn.style.display = "none";
-
-    }
-
-});
-
-topBtn.addEventListener("click", () => {
-
-    window.scrollTo({
-
-        top: 0,
-
-        behavior: "smooth"
+        card.classList.add("fade");
 
     });
 

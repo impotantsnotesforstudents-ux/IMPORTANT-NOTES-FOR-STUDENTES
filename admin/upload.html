@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Upload Notes</title>
+
+<link rel="stylesheet" href="../style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>📤 Upload Notes</h1>
+
+<form id="uploadForm">
+
+<input
+type="text"
+id="chapter"
+placeholder="Chapter Name"
+required>
+
+<input
+type="text"
+id="subject"
+placeholder="Subject"
+required>
+
+<select id="class">
+
+<option value="10">Class 10</option>
+<option value="11">Class 11</option>
+<option value="12">Class 12</option>
+
+</select>
+
+<input
+type="text"
+id="pdf"
+placeholder="PDF Path (Example: pdf/class10/maths/real-numbers.pdf)"
+required>
+
+<label>
+
+<input
+type="checkbox"
+id="premium">
+
+Premium Note
+
+</label>
+
+<button class="btn">
+
+Upload Note
+
+</button>
+
+</form>
+
+</div>
+
+<script type="module" src="upload.js"></script>
+
+</body>
+
+</html>

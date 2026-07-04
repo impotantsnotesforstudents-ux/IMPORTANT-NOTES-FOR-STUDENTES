@@ -37,6 +37,7 @@ onAuthStateChanged(auth, async (user) => {
     }
 
 });
+
 document.getElementById("buyPremium").addEventListener("click", () => {
 
     const options = {

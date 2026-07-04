@@ -37,7 +37,10 @@ onAuthStateChanged(auth, async (user) => {
 
             premiumStatus.textContent =
                 data.premium ? "👑 Premium Member" : "Free Account";
+const premiumText = document.getElementById("premiumText");
 
+premiumText.textContent =
+    data.premium ? "Premium" : "Free";
         } else {
 
             userName.textContent = "User not found";

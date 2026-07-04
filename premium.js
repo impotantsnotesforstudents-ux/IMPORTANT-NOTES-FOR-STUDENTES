@@ -40,7 +40,7 @@ document.getElementById("buyPremium").addEventListener("click", () => {
 
     const options = {
 
-        key: "rzp_live_YOUR_KEY_ID",
+        key: T9RlJwMJS8w8eO
 
         amount: 24900,
 

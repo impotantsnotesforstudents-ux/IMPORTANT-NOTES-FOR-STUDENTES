@@ -51,29 +51,30 @@ document.getElementById("buyPremium").addEventListener("click", () => {
 
     description: "ATR Premium Membership",
 
-   handler: async function (response) {
+    handler: async function (response) {
 
-    alert("Payment Successful!");
+        alert("Payment Successful!");
 
-    const user = auth.currentUser;
+        const user = auth.currentUser;
 
-    if (user) {
+        if (user) {
 
-        await updateDoc(doc(db, "users", user.uid), {
-            premium: true
-        });
+            await updateDoc(doc(db, "users", user.uid), {
+                premium: true
+            });
 
-        alert("🎉 You are now a Premium Member!");
+            alert("🎉 You are now a Premium Member!");
 
-        window.location.href = "profile.html";
-        const rzp = new Razorpay(options);
-rzp.open();
+            window.location.href = "profile.html";
+
+        }
 
     }
 
-}
-    const rzp = new Razorpay(options);
+};
 
-    rzp.open();
+const rzp = new Razorpay(options);
+
+rzp.open();
 
 });

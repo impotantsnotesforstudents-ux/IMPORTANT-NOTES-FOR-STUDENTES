@@ -39,8 +39,6 @@ onAuthStateChanged(auth, async (user) => {
 });
 document.getElementById("buyPremium").addEventListener("click", () => {
 
-document.getElementById("buyPremium").addEventListener("click", () => {
-
     const options = {
 
         key: "rzp_live_T9RlJwMJS8w8eO",

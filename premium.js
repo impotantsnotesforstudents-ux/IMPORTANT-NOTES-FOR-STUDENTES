@@ -4,7 +4,6 @@ import {
     doc,
     getDoc,
     updateDoc
-}
 } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
 
 onAuthStateChanged(auth, async (user) => {

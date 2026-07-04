@@ -38,28 +38,27 @@ onAuthStateChanged(auth, async (user) => {
 });
 document.getElementById("buyPremium").addEventListener("click", () => {
 
-    const options = {
+ const options = {
 
-        key:rzp_live_T9RlJwMJS8w8eO
+    key: "rzp_live_T9RlJwMJS8w8eO",
 
-        amount: 24900,
+    amount: 24900,
 
-        currency: "INR",
+    currency: "INR",
 
-        name: "ATR Important Notes",
+    name: "ATR Important Notes",
 
-        description: "ATR Premium Membership",
+    description: "ATR Premium Membership",
 
-        handler: function (response) {
+    handler: function (response) {
 
-            alert("Payment Successful!");
+        alert("Payment Successful!");
 
-            console.log(response);
+        console.log(response);
 
-        }
+    }
 
-    };
-
+};
     const rzp = new Razorpay(options);
 
     rzp.open();

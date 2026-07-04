@@ -43,7 +43,7 @@ document.getElementById("buyPremium").addEventListener("click", () => {
 
     const options = {
 
-        key: "YOUR_RAZORPAY_KEY_ID",
+        key: "rzp_live_T9RlJwMJS8w8eO",
 
         amount: 24900,
 

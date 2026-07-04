@@ -66,6 +66,8 @@ document.getElementById("buyPremium").addEventListener("click", () => {
         alert("🎉 You are now a Premium Member!");
 
         window.location.href = "profile.html";
+        const rzp = new Razorpay(options);
+rzp.open();
 
     }
 

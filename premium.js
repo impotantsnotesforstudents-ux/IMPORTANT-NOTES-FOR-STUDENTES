@@ -36,3 +36,32 @@ onAuthStateChanged(auth, async (user) => {
     }
 
 });
+document.getElementById("buyPremium").addEventListener("click", () => {
+
+    const options = {
+
+        key: "rzp_live_YOUR_KEY_ID",
+
+        amount: 24900,
+
+        currency: "INR",
+
+        name: "ATR Important Notes",
+
+        description: "ATR Premium Membership",
+
+        handler: function (response) {
+
+            alert("Payment Successful!");
+
+            console.log(response);
+
+        }
+
+    };
+
+    const rzp = new Razorpay(options);
+
+    rzp.open();
+
+});

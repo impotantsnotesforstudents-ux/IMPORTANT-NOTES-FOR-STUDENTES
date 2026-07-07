@@ -33,7 +33,7 @@ onAuthStateChanged(auth, (user) => {
     } else {
 
         userArea.innerHTML = `
-            <a href="pages/login.html" class="btn">Login</a>
+            <a href="pages/login.html" class="btn">Sign In</a>
         `;
 
     }

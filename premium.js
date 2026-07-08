@@ -10,72 +10,98 @@ onAuthStateChanged(auth, async (user) => {
 
     if (!user) {
         alert("Please login first.");
-        window.location.href = "pages/login.html";
+        window.location.href = "../pages/login.html";
         return;
     }
 
-    const docRef = doc(db, "users", user.uid);
-    const docSnap = await getDoc(docRef);
+    try {
 
-    if (!docSnap.exists()) {
-        alert("User record not found.");
-        return;
-    }
+        const docRef = doc(db, "users", user.uid);
+        const docSnap = await getDoc(docRef);
 
-    const data = docSnap.data();
+        if (!docSnap.exists()) {
+            alert("User record not found.");
+            return;
+        }
 
-    if (data.premium === true) {
+        const data = docSnap.data();
 
-        console.log("Premium User");
+        if (data.premium === true) {
 
-    } else {
+            console.log("Premium User");
 
-        alert("🔒 This is Premium Content.\n\nUpgrade to Premium to continue.");
+        } else {
 
-        window.location.href = "pages/premium.html";
+            alert("🔒 This is Premium Content.\n\nUpgrade to Premium to continue.");
 
-    }
-
-});
-
-document.getElementById("buyPremium").addEventListener("click", () => {
-
-    const options = {
-
-        key: "rzp_live_T9RlJwMJS8w8eO",
-
-        amount: 24900,
-
-        currency: "INR",
-
-        name: "ATR Important Notes",
-
-        description: "ATR Premium Membership",
-
-        handler: async function (response) {
-
-            alert("Payment Successful!");
-
-            const user = auth.currentUser;
-
-            if (user) {
-
-                await updateDoc(doc(db, "users", user.uid), {
-                    premium: true
-                });
-
-                alert("🎉 You are now a Premium Member!");
-
-                window.location.href = "profile.html";
-
-            }
+            // Already on premium page, so no redirect needed.
+            // Uncomment the next line only if another page uses this script.
+            // window.location.href = "premium.html";
 
         }
 
-    };
+    } catch (error) {
 
-    const rzp = new Razorpay(options);
+        console.error(error);
+        alert(error.message);
 
-    rzp.open();
+    }
 
 });
+
+const buyBtn = document.getElementById("buyPremium");
+
+if (buyBtn) {
+
+    buyBtn.addEventListener("click", () => {
+
+        const options = {
+
+            key: "rzp_live_T9RlJwMJS8w8eO",
+
+            amount: 249,
+
+            currency: "INR",
+
+            name: "ATR Important Notes",
+
+            description: "ATR Premium Membership",
+
+            handler: async function () {
+
+                try {
+
+                    alert("Payment Successful!");
+
+                    const user = auth.currentUser;
+
+                    if (user) {
+
+                        await updateDoc(doc(db, "users", user.uid), {
+                            premium: true
+                        });
+
+                        alert("🎉 You are now a Premium Member!");
+
+                        window.location.href = "../index.html";
+
+                    }
+
+                } catch (error) {
+
+                    console.error(error);
+                    alert(error.message);
+
+                }
+
+            }
+
+        };
+
+        const rzp = new Razorpay(options);
+
+        rzp.open();
+
+    });
+
+}

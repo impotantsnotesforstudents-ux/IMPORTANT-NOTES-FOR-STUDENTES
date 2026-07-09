@@ -5,52 +5,82 @@ import {
     updateDoc
 } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
 
-const buyButton = document.getElementById("buyPremium");
+document.addEventListener("DOMContentLoaded", () => {
 
-if (buyButton) {
+    const buttons = document.querySelectorAll(".buyBtn");
 
-    buyButton.addEventListener("click", () => {
+    buttons.forEach(button => {
 
-        const options = {
+        button.addEventListener("click", () => {
 
-            key: "YOUR_RAZORPAY_KEY_ID",
+            const amount = Number(button.dataset.amount);
 
-            amount: 24900,
+            let title = "";
 
-            currency: "INR",
+            if (amount === 19) {
+                title = "Single Chapter";
+            } else if (amount === 149) {
+                title = "One Subject";
+            } else {
+                title = "ATR Premium";
+            }
 
-            name: "ATR Important Notes",
+            const options = {
 
-            description: "ATR Premium Membership",
+                key: "rzp_live_T9RlJwMJS8w8eO",
 
-            handler: async function () {
+                amount: amount * 100,
 
-                const user = auth.currentUser;
+                currency: "INR",
 
-                if (!user) {
+                name: "ATR Important Notes",
 
-                    alert("Please login first.");
+                description: title,
 
-                    return;
+                handler: async function () {
+
+                    const user = auth.currentUser;
+
+                    if (!user) {
+
+                        alert("Please login first.");
+
+                        window.location.href = "/pages/login.html";
+
+                        return;
+
+                    }
+
+                    await updateDoc(doc(db, "users", user.uid), {
+
+                        premium: true,
+
+                        plan: title,
+
+                        amount: amount
+
+                    });
+
+                    alert("🎉 Payment Successful!");
+
+                    window.location.href = "/index.html";
+
+                },
+
+                theme: {
+
+                    color: "#2563EB"
 
                 }
 
-                await updateDoc(doc(db, "users", user.uid), {
-                    premium: true
-                });
+            };
 
-                alert("🎉 Congratulations! You are now a Premium Member.");
+            const rzp = new Razorpay(options);
 
-                window.location.href = "profile.html";
+            rzp.open();
 
-            }
-
-        };
-
-        const rzp = new Razorpay(options);
-
-        rzp.open();
+        });
 
     });
 
-}
+});

@@ -113,75 +113,75 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // =========================
-    // Search
-    // =========================
+// Search
+// =========================
 
-    const search=document.getElementById("search");
-    const searchBtn=document.getElementById("searchBtn");
+const search = document.getElementById("search");
+const searchBtn = document.getElementById("searchBtn");
 
-    function doSearch(){
+const inPagesFolder = window.location.pathname.includes("/pages/");
 
-        if(!search) return;
+const paths = {
+    home: inPagesFolder ? "../index.html" : "index.html",
+    class10: inPagesFolder ? "../class10.html" : "class10.html",
+    class11: inPagesFolder ? "../class11.html" : "class11.html",
+    class12: inPagesFolder ? "../class12.html" : "class12.html",
+    premium: inPagesFolder ? "premium.html" : "pages/premium.html",
+    login: inPagesFolder ? "login.html" : "pages/login.html"
+};
 
-        let value=search.value.toLowerCase().trim();
+function doSearch() {
 
-        if(value.includes("10")){
+    if (!search) return;
 
-            location.href="class10.html";
+    let value = search.value.toLowerCase().trim();
 
-        }
+    if (value.includes("10")) {
 
-        else if(value.includes("11")){
+        location.href = paths.class10;
 
-            location.href="class11.html";
+    } else if (value.includes("11")) {
 
-        }
+        location.href = paths.class11;
 
-        else if(value.includes("12")){
+    } else if (value.includes("12")) {
 
-            location.href="class12.html";
+        location.href = paths.class12;
 
-        }
+    } else if (value.includes("premium")) {
 
-        else if(value.includes("premium")){
+        location.href = paths.premium;
 
-            location.href="pages/premium.html";
+    } else if (value.includes("login")) {
 
-        }
+        location.href = paths.login;
 
-        else if(value.includes("login")){
+    } else {
 
-            location.href="pages/login.html";
-
-        }
-
-        else{
-
-            alert("No matching notes found.");
-
-        }
-
-    }
-
-    if(searchBtn){
-
-        searchBtn.addEventListener("click",doSearch);
+        alert("No matching notes found.");
 
     }
+}
 
-    if(search){
+if (searchBtn) {
 
-        search.addEventListener("keypress",(e)=>{
+    searchBtn.addEventListener("click", doSearch);
 
-            if(e.key==="Enter"){
+}
 
-                doSearch();
+if (search) {
 
-            }
+    search.addEventListener("keypress", (e) => {
 
-        });
+        if (e.key === "Enter") {
 
-    }
+            doSearch();
+
+        }
+
+    });
+
+}
 
     // =========================
     // Scroll To Top

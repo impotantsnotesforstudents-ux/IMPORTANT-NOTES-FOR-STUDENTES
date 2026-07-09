@@ -1,4 +1,5 @@
 import { auth, db } from "../firebase.js";
+
 import {
     onAuthStateChanged,
     signOut
@@ -9,56 +10,43 @@ import {
     getDoc
 } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
 
-const userName = document.getElementById("userName");
-const userEmail = document.getElementById("userEmail");
-const premiumStatus = document.getElementById("premiumStatus");
-const logoutBtn = document.getElementById("logoutBtn");
-
 onAuthStateChanged(auth, async (user) => {
 
     if (!user) {
 
-        window.location.href = "login.html";
+        location.href = "login.html";
         return;
 
     }
 
-    try {
+    document.getElementById("photo").src =
+        user.photoURL || "../images/LOGO.jpeg";
 
-        const userRef = doc(db, "users", user.uid);
-        const userSnap = await getDoc(userRef);
+    document.getElementById("name").innerHTML =
+        user.displayName || "ATR Student";
 
-        if (userSnap.exists()) {
+    document.getElementById("email").innerHTML =
+        user.email;
 
-            const data = userSnap.data();
+    const snap = await getDoc(doc(db, "users", user.uid));
 
-            userName.textContent = "👋 Welcome, " + data.name;
-            userEmail.textContent = "📧 " + data.email;
+    if (snap.exists()) {
 
-            premiumStatus.textContent =
-                data.premium ? "👑 Premium Member" : "Free Account";
-const premiumText = document.getElementById("premiumText");
+        const data = snap.data();
 
-premiumText.textContent =
-    data.premium ? "Premium" : "Free";
-        } else {
-
-            userName.textContent = "User not found";
-
-        }
-
-    } catch (error) {
-
-        console.error(error);
+        document.getElementById("plan").innerHTML =
+            data.premium
+                ? "👑 Premium Member"
+                : "🆓 Free Member";
 
     }
 
 });
 
-logoutBtn.addEventListener("click", async () => {
+document.getElementById("logoutBtn").onclick = async () => {
 
     await signOut(auth);
 
-    window.location.href = "login.html";
+    location.href = "login.html";
 
-});
+};

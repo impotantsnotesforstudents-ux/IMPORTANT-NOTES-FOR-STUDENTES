@@ -36,7 +36,11 @@ onAuthStateChanged(auth, async (user) => {
 
             // Already on premium page, so no redirect needed.
             // Uncomment the next line only if another page uses this script.
-            // window.location.href = "premium.html";
+    const profilePath = window.location.pathname.includes("/pages/")
+    ? "profile.html"
+    : "pages/profile.html";
+
+window.location.href = profilePath;
 
         }
 

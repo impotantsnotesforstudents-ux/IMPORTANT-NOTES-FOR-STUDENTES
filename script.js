@@ -237,11 +237,13 @@ if (search) {
     // Fade Animation
     // =========================
 
-    const cards=document.querySelectorAll(
+   const loginPath = window.location.pathname.includes("/pages/")
+    ? "login.html"
+    : "pages/login.html";
 
-        ".stat-card,.class-card,.feature-card,.plan-card"
-
-    );
+userArea.innerHTML = `
+    <a href="${loginPath}" class="btn">Login</a>
+`;
 
     cards.forEach(card=>{
 

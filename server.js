@@ -11,7 +11,7 @@ app.use(cors());
 app.use(express.json());
 
 // Serve your website files
-app.use(express.static(__dirname));
+app.use(express.static(path.join(__dirname)));
 
 // Home page
 app.get("/", (req, res) => {
@@ -67,4 +67,13 @@ app.post("/verify-payment", (req, res) => {
 
 app.listen(3000, () => {
     console.log("🚀 Server running at http://localhost:3000");
+});
+// Serve index.html for the homepage
+app.get("/", (req, res) => {
+    res.sendFile(path.join(__dirname, "index.html"));
+});
+
+// Handle all other routes
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "index.html"));
 });

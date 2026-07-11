@@ -1,9 +1,5 @@
 import { auth, db } from "./firebase.js";
-
-import {
-    doc,
-    updateDoc
-} from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
+import { doc, updateDoc } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -11,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     buttons.forEach(button => {
 
-        button.addEventListener("click", () => {
+        button.addEventListener("click", async () => {
 
             const amount = Number(button.dataset.amount);
 
@@ -25,30 +21,60 @@ document.addEventListener("DOMContentLoaded", () => {
                 title = "ATR Premium";
             }
 
+            // Create order from Render server
+            const response = await fetch("https://important-notes-for-studentes.onrender.com/create-order", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    amount: amount * 100
+                })
+            });
+
+            const order = await response.json();
+
             const options = {
 
                 key: "rzp_live_T9RlJwMJS8w8eO",
 
-                amount: amount * 100,
+                amount: order.amount,
 
-                currency: "INR",
+                currency: order.currency,
 
                 name: "ATR Important Notes",
 
                 description: title,
 
-                handler: async function () {
+                order_id: order.id,
+
+                handler: async function (response) {
+
+                    // Verify payment
+                    const verify = await fetch("https://important-notes-for-studentes.onrender.com/verify-payment", {
+
+                        method: "POST",
+
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+
+                        body: JSON.stringify(response)
+
+                    });
+
+                    const result = await verify.json();
+
+                    if (!result.success) {
+                        alert("Payment verification failed.");
+                        return;
+                    }
 
                     const user = auth.currentUser;
 
                     if (!user) {
-
                         alert("Please login first.");
-
-                        window.location.href = "/pages/login.html";
-
                         return;
-
                     }
 
                     await updateDoc(doc(db, "users", user.uid), {
@@ -68,9 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 },
 
                 theme: {
-
                     color: "#2563EB"
-
                 }
 
             };

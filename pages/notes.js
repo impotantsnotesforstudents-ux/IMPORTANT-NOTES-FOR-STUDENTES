@@ -54,7 +54,7 @@ Class ${note.class}
 <p>📚 ${note.subject}</p>
 
 <a href="../${note.pdf}" target="_blank" class="btn">
-${note.premium ? "🔒 Buy Now" : "📄 Open PDF"}
+🔒 Buy Now
 </a>
 
 </div>

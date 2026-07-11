@@ -20,32 +20,21 @@ async function loadNotes() {
 
         const note = doc.data();
 
-        // Class Filter
         if (
             classFilter.value !== "all" &&
-            note.class !== classFilter.value
-        ) {
-            return;
-        }
+            note.class != classFilter.value
+        ) return;
 
-        // Subject Filter
         if (
             subjectFilter.value !== "all" &&
             note.subject.toLowerCase() !== subjectFilter.value.toLowerCase()
-        ) {
-            return;
-        }
+        ) return;
 
-        // Search
         if (
-            !note.chapter
-                .toLowerCase()
-                .includes(searchBox.value.toLowerCase())
-        ) {
-            return;
-        }
+            !note.chapter.toLowerCase().includes(searchBox.value.toLowerCase())
+        ) return;
 
-      notesContainer.innerHTML += `
+        notesContainer.innerHTML += `
 <div class="note-card">
 
 <div class="note-top">
@@ -55,9 +44,7 @@ Class ${note.class}
 </span>
 
 <span class="${note.premium ? "premium-badge" : "free-badge"}">
-
 ${note.premium ? "👑 Premium" : "🆓 Free"}
-
 </span>
 
 </div>
@@ -67,14 +54,15 @@ ${note.premium ? "👑 Premium" : "🆓 Free"}
 <p>📚 ${note.subject}</p>
 
 <a href="../${note.pdf}" target="_blank" class="btn">
-
 ${note.premium ? "🔒 Buy Now" : "📄 Open PDF"}
-
 </a>
 
 </div>
 `;
-    }
+    });
+
+}
+
 classFilter.addEventListener("change", loadNotes);
 subjectFilter.addEventListener("change", loadNotes);
 searchBox.addEventListener("input", loadNotes);

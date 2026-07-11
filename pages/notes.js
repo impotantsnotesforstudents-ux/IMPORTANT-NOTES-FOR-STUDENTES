@@ -43,8 +43,8 @@ async function loadNotes() {
 Class ${note.class}
 </span>
 
-<span class="${note.premium ? "premium-badge" : "free-badge"}">
-${note.premium ? "👑 Premium" : "🆓 Free"}
+<span class="premium-badge">
+👑 Premium
 </span>
 
 </div>
